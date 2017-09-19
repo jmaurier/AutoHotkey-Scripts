@@ -1,3 +1,13 @@
+FileGetTime, ModTime, %A_ScriptFullPath%, M
+SetTimer, CheckTime, 2000
+Return
+
+CheckTime:
+   FileGetTime, ModTime2, %A_ScriptFullPath%, M
+   If (ModTime2 != ModTime)
+      Reload
+Return
+
 ; --------------------------------------------------------------
 ; Modes
 ; --------------------------------------------------------------
@@ -153,10 +163,10 @@ ExitApp
 ; Other HotKeys
 ;-------------------------------------------------------------- 
 #IfWinActive, MINGW64
-:*:gitc::git commit
 :*:gita::git add -A
-:*:gitp::git push
+:*:gitc::git commit
 :*:gitf::git fetch
 :*:gitl::git pull
+:*:gitp::git push
 :*:gits::git status
 #If

@@ -8,6 +8,8 @@ CheckTime:
       Reload
 Return
 
+#Include, %A_ScriptDir%\Scripts\AHK_Git.ahk
+
 ; --------------------------------------------------------------
 ; Modes
 ; --------------------------------------------------------------
@@ -158,15 +160,3 @@ ExitApp
 
   Return
 }
-
-;-------------------------------------------------------------- 
-; Other HotKeys
-;-------------------------------------------------------------- 
-#IfWinActive, MINGW64
-:*:gita::git add -A
-:*:gitc::git commit
-:*:gitf::git fetch
-:*:gitl::git pull
-:*:gitp::git push
-:*:gits::git status
-#If

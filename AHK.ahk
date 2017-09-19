@@ -1,7 +1,7 @@
 ; --------------------------------------------------------------
 ; Modes
 ; --------------------------------------------------------------
-; Media
+; Media Mode
 !#M::ModalSwitch( "AHK_M.exe" )
 
 ;--------------------------------------------------------------	
@@ -21,19 +21,15 @@
 ;--------------------------------------------------------------	
 ; Text: SQL
 ;--------------------------------------------------------------	
-::ssf::select * from
-::uid::uniqueidentifier
-::0uid::00000000-0000-0000-0000-000000000000
+:*:ssf::select * from
+:*:uid::uniqueidentifier
+:*:0uid::00000000-0000-0000-0000-000000000000
+:*:1uid::11111111-1111-1111-1111-111111111111
 
 ;--------------------------------------------------------------
 ; Text: Long
 ;--------------------------------------------------------------
 :Rc:LOR::Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-:*:;-::
-(
---------------------------------------------------------------
---------------------------------------------------------------
-)
 
 ; --------------------------------------------------------------
 ; Methods
@@ -48,6 +44,10 @@ ModalSwitch( exe )
 ; --------------------------------------------------------------
 ; New functionality
 ; --------------------------------------------------------------
+#`::
+  Run taskmgr
+Return
+
 #g::
 {
 	clipBoardTemp := Clipboard
@@ -148,3 +148,15 @@ ExitApp
 
   Return
 }
+
+;-------------------------------------------------------------- 
+; Other HotKeys
+;-------------------------------------------------------------- 
+#IfWinActive, MINGW64
+:*:gitc::git commit
+:*:gita::git add -A
+:*:gitp::git push
+:*:gitf::git fetch
+:*:gitl::git pull
+:*:gits::git status
+#If

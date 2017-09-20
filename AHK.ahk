@@ -15,4 +15,11 @@ CheckTime:
 #Include, %A_ScriptDir%\Scripts\AHK_ClipBoard.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_HotStrings.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Applications.ahk
-#Include, %A_ScriptDir%\Scripts\AHK_Modes.ahk 
+#Include, %A_ScriptDir%\Scripts\AHK_Modes.ahk
+
+
+; Clear the ToolTip
+ReSetToolTip:
+    ToolTip
+    SetTimer, ReSetToolTip, Off
+Return

@@ -1,5 +1,9 @@
 
 ;Task Manager
 #`::
-  Run taskmgr
+	Run taskmgr
+Return
+
+#x::
+	Send, !{F4}
 Return

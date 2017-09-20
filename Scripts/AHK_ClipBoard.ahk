@@ -18,6 +18,7 @@
     val2 := Clipboard
     sum := val + val2
     Clipboard := sum
+    ToolTip
     tooltip %val% + %val% = %sum%
     SetTimer, ReSetToolTip, 1500
     Return
@@ -35,6 +36,7 @@ Loop C:\tmp\clipvar*.txt
 
 ; Clears the history by resetting the indices
 ^#!x::
+    ToolTip
     tooltip Clipboard history cleared
     SetTimer, ReSetToolTip, 1000
     maxindex = 0
@@ -49,6 +51,7 @@ Loop C:\tmp\clipvar*.txt
     }
     thisclip := clipvar%clipindex%
     clipboard := thisclip
+    ToolTip
     tooltip %clipboard%
     SetTimer, ReSetToolTip, 1000
     Return
@@ -60,17 +63,20 @@ Loop C:\tmp\clipvar*.txt
     }
     thisclip := clipvar%clipindex%
     clipboard := thisclip
+    ToolTip
     tooltip %clipboard%
     SetTimer, ReSetToolTip, 1000
     Return
 
 ; Add clipboard contents to the stack when you copy or paste using the keyboard
-~^+x::
-~^+c::
+~^x::
+~^c::
+
     Sleep 500
     clipindex += 1
     clipvar%clipindex% := clipboard
     thisclip := clipvar%clipindex%
+    ToolTip
     tooltip %thisclip%
     SetTimer, ReSetToolTip, 1000
     if clipindex > %maxindex%
@@ -79,11 +85,7 @@ Loop C:\tmp\clipvar*.txt
     }
     Return
 
-; Clear the ToolTip
-ReSetToolTip:
-    ToolTip
-    SetTimer, ReSetToolTip, Off
-    Return
+
 
 ; Saves the current clipboard history to hard disk
 ExitSub:

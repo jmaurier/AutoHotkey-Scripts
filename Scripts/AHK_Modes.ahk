@@ -9,7 +9,7 @@
 ; 1 = Home
 ; 2 = Media
 ;--------------------------------------------------------------
-!#M::
+#M::
 	CurrentMode := 2
 	ToolTip
 	ToolTip, - Media Mode -
@@ -19,11 +19,11 @@ Return
 #If (CurrentMode = 2)
 	Esc::
 	#[::
+	#M::
 		CurrentMode := 1
 		ToolTip
-		ToolTip, - Normal Mode -
+		ToolTip, - PC Mode -
 		SetTimer, ReSetToolTip, 750
-		ToolTip
 		Return
 
 	h::Send {Media_Prev}
@@ -36,6 +36,9 @@ Return
 	s::Run %AppData%\Spotify\Spotify.exe
 	Delete & s::Process, Close, Spotify.exe
 
+	n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
+	Delete & n::Process, Close, Netflix
+
 	;Turn off normal typing while in media mode.
 	a::
 	b::
@@ -45,7 +48,6 @@ Return
 	f::
 	g::
 	i::
-	n::
 	o::
 	q::
 	r::

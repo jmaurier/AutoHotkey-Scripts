@@ -1,12 +1,13 @@
+/*
 FileGetTime, ModTime, %A_ScriptFullPath%, M
 SetTimer, CheckTime, 2000
 Return
-
 CheckTime:
     FileGetTime, ModTime2, %A_ScriptFullPath%, M
     If (ModTime2 != ModTime)
       Reload
     Return
+*/
 
 ;--------------------------------------------------------------
 ; Script Directory

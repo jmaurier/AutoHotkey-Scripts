@@ -69,9 +69,23 @@ Loop C:\tmp\clipvar*.txt
     Return
 
 ; Add clipboard contents to the stack when you copy or paste using the keyboard
-~^x::
-~^c::
+^+x::
+    Send, ^x
+    Sleep 500
+    clipindex += 1
+    clipvar%clipindex% := clipboard
+    thisclip := clipvar%clipindex%
+    ToolTip
+    tooltip %thisclip%
+    SetTimer, ReSetToolTip, 1000
+    if clipindex > %maxindex%
+    {
+      maxindex := clipindex
+    }
+    Return
 
+^+c::
+    Send, ^c
     Sleep 500
     clipindex += 1
     clipvar%clipindex% := clipboard

@@ -21,3 +21,6 @@ ExitCurrentMode:
 Return
 
 Delete & a::Process, Close, AHK.exe
+
+#!H::
+	Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\FileExplorerOptions

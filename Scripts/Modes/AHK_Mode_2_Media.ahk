@@ -7,6 +7,11 @@
 	l::Send {Media_Next}
 	m::Send {Volume_Mute}
 	p::Send {Media_Play_Pause}
+	q::
+		Send {Media_Stop}
+		Goto, ExitCurrentMode
+	Return
+
 
 	s::Run %AppData%\Spotify\Spotify.exe
 	Delete & s::Process, Close, Spotify.exe
@@ -24,7 +29,6 @@
 	g::
 	i::
 	o::
-	q::
 	r::
 	t::
 	u::

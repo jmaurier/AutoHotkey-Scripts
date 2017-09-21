@@ -18,3 +18,6 @@
 #Include, %A_ScriptDir%\Scripts\AHK_Applications.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Modes.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Core.ahk
+
+; Close the AHK.exe file
+Delete & a::Process, Close, AHK.exe

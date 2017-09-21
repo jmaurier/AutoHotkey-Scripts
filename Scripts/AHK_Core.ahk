@@ -21,6 +21,7 @@ Return
 #!H::
 	Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\FileExplorerOptions
 
+
 ;--------------------------------------------------------------
 ; Labels
 ;--------------------------------------------------------------

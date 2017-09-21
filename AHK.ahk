@@ -1,12 +1,12 @@
 /*
-FileGetTime, ModTime, %A_ScriptFullPath%, M
-SetTimer, CheckTime, 2000
-Return
-CheckTime:
-    FileGetTime, ModTime2, %A_ScriptFullPath%, M
-    If (ModTime2 != ModTime)
-      Reload
-    Return
+	FileGetTime, ModTime, %A_ScriptFullPath%, M
+	SetTimer, CheckTime, 2000
+	Return
+	CheckTime:
+	    FileGetTime, ModTime2, %A_ScriptFullPath%, M
+	    If (ModTime2 != ModTime)
+	      Reload
+	    Return
 */
 
 ;--------------------------------------------------------------
@@ -17,10 +17,4 @@ CheckTime:
 #Include, %A_ScriptDir%\Scripts\AHK_HotStrings.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Applications.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Modes.ahk
-
-
-; Clear the ToolTip
-ReSetToolTip:
-    ToolTip
-    SetTimer, ReSetToolTip, Off
-Return
+#Include, %A_ScriptDir%\Scripts\AHK_Core.ahk

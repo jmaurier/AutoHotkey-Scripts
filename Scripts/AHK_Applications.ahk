@@ -1,9 +1,9 @@
 
-;Task Manager
-#`::
-	Run taskmgr
-Return
+; Git bash
+^#G::Run C:\Program Files\Git\git-bash.exe
 
-#x::
-	Send, !{F4}
-Return
+; Task Manager
+ #`::Run taskmgr
+
+; Close current application
+ #x::Send, !{F4}

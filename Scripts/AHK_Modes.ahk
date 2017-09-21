@@ -3,11 +3,14 @@
 ; the user is currently in.
 ;--------------------------------------------------------------
 
+#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_2_Media.ahk
+#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_3_Web.ahk
 
 ;--------------------------------------------------------------
 ; Modes
-; 1 = Home
+; 1 = PC
 ; 2 = Media
+; 3 = Bookmark
 ;--------------------------------------------------------------
 #M::
 	CurrentMode := 2
@@ -16,51 +19,9 @@
 	SetTimer, ReSetToolTip, 750
 Return
 
-#If (CurrentMode = 2)
-	Esc::
-	#[::
-	#M::
-		CurrentMode := 1
-		ToolTip
-		ToolTip, - PC Mode -
-		SetTimer, ReSetToolTip, 750
-		Return
-
-	h::Send {Media_Prev}
-	k::Send {Volume_Up}
-	j::Send {Volume_Down}
-	l::Send {Media_Next}
-	m::Send {Volume_Mute}
-	p::Send {Media_Play_Pause}
-
-	s::Run %AppData%\Spotify\Spotify.exe
-	Delete & s::Process, Close, Spotify.exe
-
-	n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
-	Delete & n::Process, Close, Netflix
-
-	;Turn off normal typing while in media mode.
-	a::
-	b::
-	c::
-	d::
-	e::
-	f::
-	g::
-	i::
-	o::
-	q::
-	r::
-	t::
-	u::
-	v::
-	w::
-	x::
-	y::
-	z::
-		ToolTip
-		ToolTip, - Media Mode -
-		SetTimer, ReSetToolTip, 750
-		Return
-
-#If
+#W::
+	CurrentMode := 3
+	ToolTip
+	ToolTip, - Web Mode -
+	SetTimer, ReSetToolTip, 750
+Return

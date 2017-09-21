@@ -15,11 +15,8 @@
 		Delete & n::Process, Close, Netflix
 
 	p::Send {Media_Play_Pause}
-
-	q::
-		Send {Media_Stop}
-		Goto, ExitCurrentMode
-	Return
+	
+	q::Send {Media_Stop}
 
 	s::Run %AppData%\Spotify\Spotify.exe
 		Delete & s::Process, Close, Spotify.exe

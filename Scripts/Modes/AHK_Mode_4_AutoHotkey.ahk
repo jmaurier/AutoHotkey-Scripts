@@ -12,15 +12,15 @@
 			Process, Close, AHK.exe
 
 			Sleep, 750
-			Run, Ahk2exe.exe /in AHK.ahk
+			Run *RunAs Ahk2exe.exe /in AHK.ahk
 
 			Sleep, 750
-			Run %A_ScriptDir%\AHK.exe
+			Run *RunAs %A_ScriptDir%\AHK.exe
 			FileDelete, %A_WorkingDir%\restart.ahk 
 		)
 		, %A_WorkingDir%\restart.ahk
 
-		Run %A_WorkingDir%\restart.ahk 
+		Run *RunAs %A_WorkingDir%\restart.ahk 
 
 	Return
 

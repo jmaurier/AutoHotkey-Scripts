@@ -15,7 +15,7 @@ Esc::
 #l::
 	Send, {Media_Stop}
 	Send, {Volume_Mute}
-Return
+	Return
 
 ; TODO: add funcctionality to show or hide hidden files and folders
 #!H::
@@ -30,7 +30,7 @@ Return
 ReSetToolTip:
     ToolTip
     SetTimer, ReSetToolTip, Off
-Return
+	Return
 
 ; Exit to PC Mode
 ExitCurrentMode:
@@ -38,4 +38,4 @@ ExitCurrentMode:
 	ToolTip
 	ToolTip, - PC Mode -
 	SetTimer, ReSetToolTip, 750
-Return
+	Return

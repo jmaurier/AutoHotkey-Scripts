@@ -1,1 +1,1 @@
-+ Git timeing bugs
++ Shift + {char} in media mode will exit to Normal Mode after a single press (except for volumes j and k)

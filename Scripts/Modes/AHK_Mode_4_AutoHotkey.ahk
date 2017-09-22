@@ -62,9 +62,9 @@
 		Gosub, #x
 
 		; Reset 
-		if FileExist( "restart.ahk" )
-			FileDelete, %A_WorkingDir%\restart.ahk
-		FileAppend, + , %A_WorkingDir%\restart.ahk
+		if FileExist( "CommitChanges.txt" )
+			FileDelete, %A_WorkingDir%\CommitChanges.txt
+		FileAppend, + , %A_WorkingDir%\CommitChanges.txt
 
 		Return
 

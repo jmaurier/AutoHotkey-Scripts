@@ -23,9 +23,11 @@
 		Goto, ExitCurrentMode
 		Return
 
-	n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
-		Delete & n::Process, Close, Netflix
-
+	 n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
+	+n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
+		Goto, ExitCurrentMode
+		Return
+		
 	 p::Send {Media_Play_Pause}
 	+p::
 		Send {Media_Play_Pause}
@@ -38,8 +40,12 @@
 		Goto, ExitCurrentMode
 		Return
 
-	s::Run %AppData%\Spotify\Spotify.exe
-		Delete & s::Process, Close, Spotify.exe
+	 s::Run %AppData%\Spotify\Spotify.exe
+	+s::
+		Run %AppData%\Spotify\Spotify.exe
+		Goto, ExitCurrentMode
+		Return
+	Delete & s::Process, Close, Spotify.exe
 
 	;Turn off normal typing while in media mode.
 	a::

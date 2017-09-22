@@ -25,4 +25,33 @@
 		Run, https://www.reddit.com/
 		Goto, ExitCurrentMode
 		Return
+	s::
+		Run, https://www.google.com/
+		Goto, ExitCurrentMode
+		Return
+
+	;Turn off normal typing while in media mode.
+	b::
+	c::
+	e::
+	f::
+	i::
+	j::
+	k::
+	l::
+	m::
+	o::
+	p::
+	q::
+	t::
+	u::
+	v::
+	w::
+	x::
+	y::
+	z::
+		ToolTip
+		ToolTip,  Bookmark...
+		SetTimer, ReSetToolTip, 750
+		Return
 #If

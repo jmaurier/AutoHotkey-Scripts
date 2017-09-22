@@ -33,6 +33,7 @@
 
 		; Recompile and run
 		Gosub, r
+		Return
 
 	; Pull new changes
 	p::
@@ -55,6 +56,7 @@
 
 		; Recompile and run
 		Gosub, r
+		Return
 
 	; Close the AHK.exe process
 	q::Process, Close, AHK.exe
@@ -83,6 +85,7 @@
 		, %A_WorkingDir%\restart.ahk
 
 		Run *RunAs %A_WorkingDir%\restart.ahk
+		Return
 
 	; Window information
 	w::

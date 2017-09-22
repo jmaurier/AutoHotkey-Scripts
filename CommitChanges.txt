@@ -1,1 +1,1 @@
-+ Changed times for pushing and pulling to and from git
++ Git timeing bugs

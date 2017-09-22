@@ -9,12 +9,12 @@
 		; Make sure we are pointing to the correct repo location
 		send cd %A_WorkingDir%
 		Send, {enter}
-		Sleep, 100
+		Sleep, 500
 
 		; Add files to stage
 		Send, git add -A
 		Send, {enter}
-		Sleep, 100
+		Sleep, 500
 
 		; Commit with local commit changes file
 		Send git commit -a -F CommitChanges.txt
@@ -25,9 +25,6 @@
 		Send, git push
 		Send, {enter}
 		Sleep, 5000
-
-		; Close git bash
-		Gosub, #x
 
 		; Reset 
 		if FileExist( "CommitChanges.txt" )
@@ -55,9 +52,6 @@
 		Send, git pull
 		Send, {enter}
 		Sleep, 5000
-
-		; Close git bash
-		Gosub, #x
 
 		; Recompile and run
 		Gosub, r

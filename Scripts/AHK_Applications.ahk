@@ -1,6 +1,12 @@
 
 ; Git bash
-^#G::Run C:\Program Files\Git\git-bash.exe
+^#G::
+	if WinExist("MINGW64")
+    	WinActivate, MINGW64
+    else
+		Run C:\Program Files\Git\git-bash.exe
+	Sleep, 100
+	Return
 
 ; Task Manager
  #`::Run taskmgr

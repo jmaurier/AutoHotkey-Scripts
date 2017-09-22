@@ -1,6 +1,64 @@
 #If (CurrentMode = 4)
 	#A::Goto, ExitCurrentMode
 
+	; Auto commit ALL of the AutoHotkey project
+	c::
+		; Open Git bash
+		Gosub, ^#G
+
+		; Make sure we are pointing to the correct repo location
+		send cd %A_WorkingDir%
+		Send, {enter}
+		Sleep, 100
+
+		; Add files to stage
+		Send, git add -A
+		Send, {enter}
+		Sleep, 750
+
+		; Commit with local commit changes file
+		Send git commit -a -F CommitChanges.txt
+		Send, {enter}
+		Sleep, 2000
+
+		; Push all changes to repo
+		Send, git push
+		Send, {enter}
+		Sleep, 3000
+
+		; Close git bash
+		Gosub, #x
+
+		; Reset 
+		if FileExist( "CommitChanges.txt" )
+			FileDelete, %A_WorkingDir%\CommitChanges.txt
+		FileAppend, + , %A_WorkingDir%\CommitChanges.txt
+
+		; Recompile and run
+		Gosub, r
+
+	; Pull new changes
+	p::
+		; Open Git bash
+		Gosub, ^#G
+
+		; Make sure we are pointing to the correct repo location
+		send cd %A_WorkingDir%
+		Send, {enter}
+		Sleep, 100
+
+		Send, git fetch
+		Send, {enter}
+		Sleep, 750
+		Return
+
+		Send, git pull
+		Send, {enter}
+		Sleep, 3000
+
+		; Recompile and run
+		Gosub, r
+
 	; Close the AHK.exe process
 	q::Process, Close, AHK.exe
 
@@ -27,55 +85,7 @@
 		)
 		, %A_WorkingDir%\restart.ahk
 
-		Run *RunAs %A_WorkingDir%\restart.ahk 
-		Return
-
-	; Auto commit ALL of the AutoHotkey project
-	c::
-		; Open Git bash
-		if WinExist("MINGW64")
-    		WinActivate, MINGW64
-    	Else
-    		Gosub, ^#G
-		Sleep, 100
-
-		; Make sure we are pointing to the correct repo location
-		send cd %A_WorkingDir%
-		Send, {enter}
-		Sleep, 100
-
-		; Send git status hotkey
-		Send, git status
-		Send, {enter}
-		Sleep, 750
-
-		; Add files to stage
-		Send, git add -A
-		Send, {enter}
-		Sleep, 750
-
-		; Commit with local commit changes file
-		Send git commit -a -F CommitChanges.txt
-		Send, {enter}
-		Sleep, 2000
-
-		; Push all changes to repo
-		Send, git push
-		Send, {enter}
-		Sleep, 1000
-
-		; Close git bash
-		Gosub, #x
-
-		; Reset 
-		if FileExist( "CommitChanges.txt" )
-			FileDelete, %A_WorkingDir%\CommitChanges.txt
-		FileAppend, + , %A_WorkingDir%\CommitChanges.txt
-
-		; Recompile and run
-		Gosub, r
-
-		Return
+		Run *RunAs %A_WorkingDir%\restart.ahk
 
 	; Window information
 	w::
@@ -98,7 +108,6 @@
 	m::
 	n::
 	o::
-	p::
 	s::
 	t::
 	u::

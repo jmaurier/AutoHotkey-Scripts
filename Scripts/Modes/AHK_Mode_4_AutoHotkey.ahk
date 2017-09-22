@@ -72,6 +72,9 @@
 			FileDelete, %A_WorkingDir%\CommitChanges.txt
 		FileAppend, + , %A_WorkingDir%\CommitChanges.txt
 
+		; Recompile and run
+		Gosub, r
+
 		Return
 
 	; Window information

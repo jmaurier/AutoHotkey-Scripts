@@ -1,1 +1,1 @@
-+ Make sure that we are looking in the right location before doing the AHK auto commit functionality
++

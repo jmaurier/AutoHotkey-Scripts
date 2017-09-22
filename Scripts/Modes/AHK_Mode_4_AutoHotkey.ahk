@@ -6,16 +6,23 @@
 
 	r::
 		if FileExist( "restart.ahk" )
-			FileDelete, %A_WorkingDir%\restart.ahk 
+			FileDelete, %A_WorkingDir%\restart.ahk
+
 		FileAppend, 
 		(
 			Process, Close, AHK.exe
 
+			ToolTip
+			ToolTip Recompiling...
 			Sleep, 750
 			Run *RunAs Ahk2exe.exe /in AHK.ahk
 
+			ToolTip
+			ToolTip Restarting...
 			Sleep, 750
 			Run *RunAs %A_ScriptDir%\AHK.exe
+
+			ToolTip
 			FileDelete, %A_WorkingDir%\restart.ahk 
 		)
 		, %A_WorkingDir%\restart.ahk
@@ -50,7 +57,7 @@
 	y::
 	z::
 		ToolTip
-		ToolTip, - AHK Mode -
+		ToolTip,  AutoHotKey...
 		SetTimer, ReSetToolTip, 750
 		Return
 #If

@@ -7,7 +7,7 @@
 ;--------------------------------------------------------------
 #IfWinActive, MINGW64
 	:c*:GA::git add -A
-	:c*:GC::git commit
+	:c*:GC::git commit -a -F CommitChanges.txt
 	:c*:GF::git fetch
 	:c*:GL::git pull
 	:c*:GP::git push

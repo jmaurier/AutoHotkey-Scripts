@@ -40,7 +40,7 @@
 	y::
 	z::
 		ToolTip
-		ToolTip, - Media Mode -
+		ToolTip,  Media...
 		SetTimer, ReSetToolTip, 750
 		Return
 #If

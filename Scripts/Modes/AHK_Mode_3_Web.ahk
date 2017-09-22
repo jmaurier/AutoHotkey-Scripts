@@ -1,4 +1,6 @@
 #If (CurrentMode = 3)
+	#W::Goto, ExitCurrentMode
+
 	a::
 		Run, https://autohotkey.com/docs/AutoHotkey.htm
 		Goto, ExitCurrentMode

@@ -5,8 +5,7 @@
 #If, (CurrentMode > 1)
 Esc::
 #[::
-	Goto, ExitCurrentMode
-	Return
+	ExitCurrentMode()
 #If
 
 ;--------------------------------------------------------------
@@ -36,10 +35,11 @@ ReSetToolTip:
 	Return
 
 ; Exit to PC Mode
-ExitCurrentMode:
-	CurrentMode := 1
+ExitCurrentMode()
+{
+	global CurrentMode := 1
 	ToolTipInOut("Normal Mode")
-	Return
+}
 
 ;--------------------------------------------------------------
 ; Functions
@@ -62,4 +62,19 @@ ToolTipInOut(textValue)
 		Sleep, charTime
 	}
 	ToolTip
+}
+
+OpenIfFileExists(Path)
+{
+	IfExist, %path%
+		Run %path%
+
+	IfNotExist, %path%
+		MsgBox,, AutoHotkey File Finder, File not found: `n%path%
+}
+
+SendAndExit(ToSend)
+{
+	Send, %ToSend%
+	ExitCurrentMode()
 }

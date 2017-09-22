@@ -1,7 +1,8 @@
-+ Find method for checking if a program/folder exists before opening and throwing a message if it doesn't
-+ Shift to exif current mode keys on all modes
+; Core functionality updates
 + Update README.md with all current modes and HKs
++ Make a dictionary to hold mode names and numbers
 
+; Features
 + Add functionality to control hue lamps
 + Add hk to show/hide hidden files
 + Add hk to show file extentions

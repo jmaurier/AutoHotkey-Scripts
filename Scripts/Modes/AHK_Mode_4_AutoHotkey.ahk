@@ -1,5 +1,5 @@
 #If (CurrentMode = 4)
-	#A::Goto, ExitCurrentMode
+	#A::ExitCurrentMode()
 
 	; Auto commit ALL of the AutoHotkey project
 	c::
@@ -48,7 +48,6 @@
 		Send, git fetch
 		Send, {enter}
 		Sleep, 1000
-		Return
 
 		Send, git pull
 		Send, {enter}

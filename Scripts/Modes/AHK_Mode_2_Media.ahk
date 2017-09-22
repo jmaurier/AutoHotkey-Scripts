@@ -1,50 +1,37 @@
 #If (CurrentMode = 2)
-	#M::Goto, ExitCurrentMode
+	#M::ExitCurrentMode()
 
 	 h::Send {Media_Prev}
-	+h::
-		Send {Media_Prev}
-		Goto, ExitCurrentMode
-		Return
+	+h::SendAndExit("{Media_Prev}")
 
-	k::Send {Volume_Up}
+	 k::Send {Volume_Up}
 
-	j::Send {Volume_Down}
+	 j::Send {Volume_Down}
 
 	 l::Send {Media_Next}
-	+l::
-		Send {Media_Next}
-		Goto, ExitCurrentMode
-		Return
+	+l::SendAndExit("{Media_Next}")
 
 	 m::Send {Volume_Mute}
-	+m::
-		Send {Volume_Mute}
-		Goto, ExitCurrentMode
+	+m::SendAndExit("{Volume_Mute}")
+
+	 n::
+	+n::
+		OpenIfFileExists("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix")
+		ExitCurrentMode()
 		Return
 
-	 n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
-	+n::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix
-		Goto, ExitCurrentMode
-		Return
-		
 	 p::Send {Media_Play_Pause}
-	+p::
-		Send {Media_Play_Pause}
-		Goto, ExitCurrentMode
-		Return
-	
+	+p::SendAndExit("{Media_Play_Pause}")
+
 	 q::Send {Media_Stop}
-	+q::
-		Send {Media_Stop}
-		Goto, ExitCurrentMode
+	+q::SendAndExit("{Media_Stop}")
+	
+	 s::OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
+	+s::
+		OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
+		ExitCurrentMode()
 		Return
 
-	 s::Run %AppData%\Spotify\Spotify.exe
-	+s::
-		Run %AppData%\Spotify\Spotify.exe
-		Goto, ExitCurrentMode
-		Return
 	Delete & s::Process, Close, Spotify.exe
 
 	;Turn off normal typing while in media mode.

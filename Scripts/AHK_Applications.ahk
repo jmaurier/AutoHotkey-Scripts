@@ -4,7 +4,7 @@
 	if WinExist("MINGW64")
     	WinActivate, MINGW64
     else
-		Run C:\Program Files\Git\git-bash.exe
+    	OpenIfFileExists("C:\Program Files\Git\git-bash.exe")
 	Sleep, 100
 	Return
 

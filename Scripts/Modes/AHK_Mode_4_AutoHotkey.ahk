@@ -30,12 +30,18 @@
 		Run *RunAs %A_WorkingDir%\restart.ahk 
 		Return
 
+	; Auto commit ALL of the AutoHotkey project
 	c::
 		; Open Git bash
 		if WinExist("MINGW64")
     		WinActivate, MINGW64
     	Else
     		Gosub, ^#G
+		Sleep, 100
+
+		; Make sure we are pointing to the correct repo location
+		send cd %A_WorkingDir%
+		Send, {enter}
 		Sleep, 100
 
 		; Send git status hotkey
@@ -56,7 +62,7 @@
 		; Push all changes to repo
 		Send, git push
 		Send, {enter}
-		Sleep, 3000
+		Sleep, 1000
 
 		; Close git bash
 		Gosub, #x

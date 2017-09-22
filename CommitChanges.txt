@@ -1,0 +1,1 @@
++ Key to add, commit, and push for git from AHK mode

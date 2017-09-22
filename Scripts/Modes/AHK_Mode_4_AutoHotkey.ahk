@@ -19,7 +19,7 @@
 		; Commit with local commit changes file
 		Send git commit -a -F CommitChanges.txt
 		Send, {enter}
-		Sleep, 2000
+		Sleep, 3000
 
 		; Push all changes to repo
 		Send, git push

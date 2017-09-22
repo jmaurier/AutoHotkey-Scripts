@@ -1,3 +1,1 @@
-+ Added restart at the end of AutoHotkey commit
-+ Increased time when waiting for a git push to complete
-+ Added git auto fetch, pull, and restart for AutoHotkey
++ Changed times for pushing and pulling to and from git

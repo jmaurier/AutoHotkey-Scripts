@@ -14,17 +14,17 @@
 		; Add files to stage
 		Send, git add -A
 		Send, {enter}
-		Sleep, 750
+		Sleep, 100
 
 		; Commit with local commit changes file
 		Send git commit -a -F CommitChanges.txt
 		Send, {enter}
-		Sleep, 3000
+		Sleep, 1000
 
 		; Push all changes to repo
 		Send, git push
 		Send, {enter}
-		Sleep, 3000
+		Sleep, 5000
 
 		; Close git bash
 		Gosub, #x
@@ -49,12 +49,15 @@
 
 		Send, git fetch
 		Send, {enter}
-		Sleep, 750
+		Sleep, 1000
 		Return
 
 		Send, git pull
 		Send, {enter}
-		Sleep, 3000
+		Sleep, 5000
+
+		; Close git bash
+		Gosub, #x
 
 		; Recompile and run
 		Gosub, r

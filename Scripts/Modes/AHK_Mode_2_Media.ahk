@@ -52,8 +52,6 @@
 	x::
 	y::
 	z::
-		ToolTip
-		ToolTip,  Media...
-		SetTimer, ReSetToolTip, 750
+		ToolTipReset("Media...", 750)
 		Return
 #If

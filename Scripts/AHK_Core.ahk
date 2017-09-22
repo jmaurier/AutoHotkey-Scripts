@@ -34,16 +34,36 @@ ReSetToolTip:
     SetTimer, ReSetToolTip, Off
 	Return
 
-; Exit to PC Mode
+;--------------------------------------------------------------
+; Functions
+;--------------------------------------------------------------
 ExitCurrentMode()
 {
 	global CurrentMode := 1
 	ToolTipInOut("Normal Mode")
 }
 
-;--------------------------------------------------------------
-; Functions
-;--------------------------------------------------------------
+OpenIfFileExists(Path)
+{
+	IfExist, %path%
+		Run %path%
+
+	IfNotExist, %path%
+		MsgBox,, AutoHotkey File Finder, File not found: `n%path%
+}
+
+SendAndSleep(textValue, t)
+{
+	Send, %textValue%
+	Sleep, %t%
+}
+
+SendAndExit(ToSend)
+{
+	Send, %ToSend%
+	ExitCurrentMode()
+}
+
 ToolTipInOut(textValue)
 {
 	ToolTip
@@ -64,17 +84,16 @@ ToolTipInOut(textValue)
 	ToolTip
 }
 
-OpenIfFileExists(Path)
+ToolTipSleep(textValue, t)
 {
-	IfExist, %path%
-		Run %path%
-
-	IfNotExist, %path%
-		MsgBox,, AutoHotkey File Finder, File not found: `n%path%
+	ToolTip
+	ToolTip %textValue%
+	Sleep, %t%
 }
 
-SendAndExit(ToSend)
+ToolTipReset(textValue, t)
 {
-	Send, %ToSend%
-	ExitCurrentMode()
+	ToolTip
+	ToolTip %textValue%
+	SetTimer, ReSetToolTip, %t%
 }

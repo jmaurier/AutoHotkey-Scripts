@@ -50,8 +50,6 @@
 	x::
 	y::
 	z::
-		ToolTip
-		ToolTip,  Bookmark...
-		SetTimer, ReSetToolTip, 750
+		ToolTipReset("Bookmark...", 750)
 		Return
 #If

@@ -7,24 +7,10 @@
 		Gosub, ^#G
 
 		; Make sure we are pointing to the correct repo location
-		send cd %A_WorkingDir%
-		Send, {enter}
-		Sleep, 500
-
-		; Add files to stage
-		Send, git add -A
-		Send, {enter}
-		Sleep, 500
-
-		; Commit with local commit changes file
-		Send git commit -a -F CommitChanges.txt
-		Send, {enter}
-		Sleep, 1000
-
-		; Push all changes to repo
-		Send, git push
-		Send, {enter}
-		Sleep, 5000
+		SendAndSleep(Format(" cd {1} {enter}", A_WorkingDir), 100)
+		SendAndSleep("git add -A {enter}", 500)
+		SendAndSleep("git commit -a -F CommitChanges.txt {enter}", 1000)
+		SendAndSleep("git push {enter}", 5000)
 
 		; Reset 
 		if FileExist( "CommitChanges.txt" )
@@ -41,24 +27,18 @@
 		Gosub, ^#G
 
 		; Make sure we are pointing to the correct repo location
-		send cd %A_WorkingDir%
-		Send, {enter}
-		Sleep, 100
-
-		Send, git fetch
-		Send, {enter}
-		Sleep, 1000
-
-		Send, git pull
-		Send, {enter}
-		Sleep, 5000
+		SendAndSleep(Format(" cd {1} {enter}", A_WorkingDir), 100)
+		SendAndSleep("git fetch {enter}", 1000)
+		SendAndSleep("git pull {enter}" , 5000)
 
 		; Recompile and run
 		Gosub, r
 		Return
 
 	; Close the AHK.exe process
-	q::Process, Close, AHK.exe
+	q::
+		ToolTipInOut("Closing...")
+		Process, Close, AHK.exe
 
 	r::
 		if FileExist( "restart.ahk" )
@@ -67,7 +47,6 @@
 		FileAppend, 
 		(
 			Process, Close, AHK.exe
-
 			ToolTip
 			ToolTip Recompiling...
 			Sleep, 750
@@ -83,6 +62,8 @@
 		)
 		, %A_WorkingDir%\restart.ahk
 
+
+		;Run *RunAs Ahk2exe.exe /in %A_WorkingDir%\restart.exe
 		Run *RunAs %A_WorkingDir%\restart.ahk
 		Return
 
@@ -114,8 +95,6 @@
 	x::
 	y::
 	z::
-		ToolTip
-		ToolTip,  AutoHotKey...
-		SetTimer, ReSetToolTip, 750
+		ToolTipReset("AutoHotKey...", 750)
 		Return
 #If

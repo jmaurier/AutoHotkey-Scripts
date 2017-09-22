@@ -1,4 +1,4 @@
-+ Added function for checking if a program/folder exists before opening and throwing a message if it doesn't
-+ Created method for sending a key and exiting the current mode
-+ refactor of all modes to use new functionality
-+ Fixed git fetch and pull--It was returning too soon
++ added ToolTipSleep(textValue, t)
++ added SendAndSleep(textValue, t)
++ added ToolTipReset(textValue, t)
++ refactored to include new functions

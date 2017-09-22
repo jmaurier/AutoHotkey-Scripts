@@ -1,8 +1,7 @@
 #g::
 {
   	clipBoardTemp := Clipboard
-  	Send, ^c
-  	Sleep 50
+    SendAndSleep("^c", 50)
   	Run, http://www.google.com/search?q=%clipboard%
   	Clipboard := clipBoardTemp
   	Return
@@ -12,9 +11,7 @@
 #+::
 {
     val := Clipboard
-    Sleep, 50
-    Send, ^c
-    Sleep, 50
+    SendAndSleep("^c", 50)
     val2 := Clipboard
     sum := val + val2
     Clipboard := sum
@@ -36,9 +33,7 @@ Loop C:\tmp\clipvar*.txt
 
 ; Clears the history by resetting the indices
 ^#!x::
-    ToolTip
-    tooltip Clipboard history cleared
-    SetTimer, ReSetToolTip, 1000
+    ToolTipReset("Clipboard history cleared", 750)
     maxindex = 0
     clipindex = 0
     Return
@@ -51,9 +46,7 @@ Loop C:\tmp\clipvar*.txt
     }
     thisclip := clipvar%clipindex%
     clipboard := thisclip
-    ToolTip
-    tooltip %clipboard%
-    SetTimer, ReSetToolTip, 1000
+    ToolTipReset(clipboard , 750)
     Return
 
 ^#!k::
@@ -63,21 +56,16 @@ Loop C:\tmp\clipvar*.txt
     }
     thisclip := clipvar%clipindex%
     clipboard := thisclip
-    ToolTip
-    tooltip %clipboard%
-    SetTimer, ReSetToolTip, 1000
+    ToolTipReset(clipboard , 750)
     Return
 
 ; Add clipboard contents to the stack when you copy or paste using the keyboard
 ^+x::
-    Send, ^x
-    Sleep 500
+    SendAndSleep("^x", 500)
     clipindex += 1
     clipvar%clipindex% := clipboard
     thisclip := clipvar%clipindex%
-    ToolTip
-    tooltip %thisclip%
-    SetTimer, ReSetToolTip, 1000
+    ToolTipReset(thisclip , 750)
     if clipindex > %maxindex%
     {
       maxindex := clipindex
@@ -85,14 +73,11 @@ Loop C:\tmp\clipvar*.txt
     Return
 
 ^+c::
-    Send, ^c
-    Sleep 500
+    SendAndSleep("^c", 500)
     clipindex += 1
     clipvar%clipindex% := clipboard
     thisclip := clipvar%clipindex%
-    ToolTip
-    tooltip %thisclip%
-    SetTimer, ReSetToolTip, 1000
+    ToolTipReset(thisclip , 750)
     if clipindex > %maxindex%
     {
       maxindex := clipindex

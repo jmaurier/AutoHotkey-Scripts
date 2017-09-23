@@ -1,4 +1,3 @@
-+ added ToolTipSleep(textValue, t)
-+ added SendAndSleep(textValue, t)
-+ added ToolTipReset(textValue, t)
-+ refactored to include new functions
++ Placed cursor in starting position for ahkcom and renamed it hkom
++ removed tray icon
++ using ExitApp rather than Process close

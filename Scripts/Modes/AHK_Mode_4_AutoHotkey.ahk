@@ -19,7 +19,7 @@
 
 		; Recompile and run
 		Gosub, r
-		Return
+		Returnr
 
 	; Pull new changes
 	p::
@@ -38,7 +38,7 @@
 	; Close the AHK.exe process
 	q::
 		ToolTipInOut("Closing...")
-		Process, Close, AHK.exe
+		ExitApp, 0
 
 	r::
 		if FileExist( "restart.ahk" )
@@ -77,7 +77,6 @@
 	a::
 	b::
 	d::
-	e::
 	f::
 	g::
 	h::

@@ -1,6 +1,6 @@
 #If (CurrentMode = 2)
 	#M::ExitCurrentMode()
-
+	
 	 h::Send {Media_Prev}
 	+h::SendAndExit("{Media_Prev}")
 
@@ -38,7 +38,7 @@
 	a::
 	b::
 	c::
-	d::
+	
 	e::
 	f::
 	g::

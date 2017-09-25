@@ -1,1 +1,1 @@
-+ fixed escape from mode bug that caused sound to mute.
++

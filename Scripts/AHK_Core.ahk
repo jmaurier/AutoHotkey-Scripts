@@ -6,6 +6,7 @@
 Esc::
 #[::
 	ExitCurrentMode()
+	Return
 #If
 
 ;--------------------------------------------------------------
@@ -41,6 +42,7 @@ ExitCurrentMode()
 {
 	global CurrentMode := 1
 	ToolTipInOut("Normal Mode")
+	Return
 }
 
 OpenIfFileExists(Path)
@@ -50,18 +52,22 @@ OpenIfFileExists(Path)
 
 	IfNotExist, %path%
 		MsgBox,, AutoHotkey File Finder, File not found: `n%path%
+
+	Return
 }
 
 SendAndSleep(textValue, t)
 {
 	Send, %textValue%
 	Sleep, %t%
+	Return
 }
 
 SendAndExit(ToSend)
 {
 	Send, %ToSend%
 	ExitCurrentMode()
+	Return
 }
 
 ToolTipInOut(textValue)
@@ -82,6 +88,7 @@ ToolTipInOut(textValue)
 		Sleep, charTime
 	}
 	ToolTip
+	Return
 }
 
 ToolTipSleep(textValue, t)
@@ -89,6 +96,8 @@ ToolTipSleep(textValue, t)
 	ToolTip
 	ToolTip %textValue%
 	Sleep, %t%
+	ToolTip
+	Return
 }
 
 ToolTipReset(textValue, t)
@@ -96,4 +105,6 @@ ToolTipReset(textValue, t)
 	ToolTip
 	ToolTip %textValue%
 	SetTimer, ReSetToolTip, %t%
+	ToolTip
+	Return
 }

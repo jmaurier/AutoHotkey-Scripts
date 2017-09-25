@@ -1,18 +1,25 @@
 #If (CurrentMode = 2)
 	#M::ExitCurrentMode()
+		Return
 	
 	 h::Send {Media_Prev}
-	+h::SendAndExit("{Media_Prev}")
+	+h::
+		SendAndExit("{Media_Prev}")
+		Return
 
 	 k::Send {Volume_Up}
 
 	 j::Send {Volume_Down}
 
 	 l::Send {Media_Next}
-	+l::SendAndExit("{Media_Next}")
+	+l::
+		SendAndExit("{Media_Next}")
+		Return
 
 	 m::Send {Volume_Mute}
-	+m::SendAndExit("{Volume_Mute}")
+	+m::
+		SendAndExit("{Volume_Mute}")
+		Return
 
 	 n::
 	+n::
@@ -21,10 +28,14 @@
 		Return
 
 	 p::Send {Media_Play_Pause}
-	+p::SendAndExit("{Media_Play_Pause}")
+	+p::
+		SendAndExit("{Media_Play_Pause}")
+		Return
 
 	 q::Send {Media_Stop}
-	+q::SendAndExit("{Media_Stop}")
+	+q::
+		SendAndExit("{Media_Stop}")
+		Return
 	
 	 s::OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
 	+s::
@@ -38,7 +49,7 @@
 	a::
 	b::
 	c::
-	
+	d::
 	e::
 	f::
 	g::

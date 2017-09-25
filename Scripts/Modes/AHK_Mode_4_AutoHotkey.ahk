@@ -19,7 +19,11 @@
 
 		; Recompile and run
 		Gosub, r
-		Returnr
+		Return
+
+	e::
+		Run, C:\Program Files\Sublime Text 3\sublime_text.exe
+		Return
 
 	; Pull new changes
 	p::
@@ -47,24 +51,15 @@
 		FileAppend, 
 		(
 			Process, Close, AHK.exe
-			ToolTip
-			ToolTip Recompiling...
+			Run Ahk2exe.exe /in AHK.ahk
 			Sleep, 750
-			Run *RunAs Ahk2exe.exe /in AHK.ahk
+			Run %A_ScriptDir%\AHK.exe
 
-			ToolTip
-			ToolTip Restarting...
-			Sleep, 750
-			Run *RunAs %A_ScriptDir%\AHK.exe
-
-			ToolTip
-			FileDelete, %A_WorkingDir%\restart.ahk 
+			FileDelete, %A_WorkingDir%\restart.ahk
 		)
 		, %A_WorkingDir%\restart.ahk
 
-
-		;Run *RunAs Ahk2exe.exe /in %A_WorkingDir%\restart.exe
-		Run *RunAs %A_WorkingDir%\restart.ahk
+		Run %A_WorkingDir%\restart.ahk
 		Return
 
 	; Window information

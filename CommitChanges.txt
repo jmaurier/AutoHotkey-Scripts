@@ -1,3 +1,1 @@
-+ Placed cursor in starting position for ahkcom and renamed it hkom
-+ removed tray icon
-+ using ExitApp rather than Process close
++ fixed escape from mode bug that caused sound to mute.

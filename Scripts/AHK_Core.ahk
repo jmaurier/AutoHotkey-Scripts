@@ -1,20 +1,10 @@
 ;--------------------------------------------------------------
-; Shared functionality
-;--------------------------------------------------------------
-
-#If, (CurrentMode > 1)
-Esc::
-#[::
-	ExitCurrentMode()
-	Return
-#If
-
-;--------------------------------------------------------------
 ; Windows functionality
 ;--------------------------------------------------------------
 #l::
 	Send, {Media_Stop}
 	Send, {Volume_Mute}
+	ExitToMainMode()
 	Return
 
 ; TODO: add funcctionality to show or hide hidden files and folders
@@ -38,12 +28,6 @@ ReSetToolTip:
 ;--------------------------------------------------------------
 ; Functions
 ;--------------------------------------------------------------
-ExitCurrentMode()
-{
-	global CurrentMode := 1
-	ToolTipInOut("Normal Mode")
-	Return
-}
 
 OpenIfFileExists(Path)
 {
@@ -66,7 +50,7 @@ SendAndSleep(textValue, t)
 SendAndExit(ToSend)
 {
 	Send, %ToSend%
-	ExitCurrentMode()
+	ExitToMainMode()
 	Return
 }
 

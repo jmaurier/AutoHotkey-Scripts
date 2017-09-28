@@ -5,6 +5,7 @@
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_2_Media.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_3_Web.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_4_AutoHotkey.ahk
+#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_5_Sec.ahk
 
 ;--------------------------------------------------------------
 ; Modes
@@ -12,13 +13,15 @@
 ; 2 = Media
 ; 3 = Bookmark
 ; 4 = AutoHotkey
+; 5 = Security
 ;--------------------------------------------------------------
 
-
-
+;--------------------------------------------------------------
+; Mode accessors
+;--------------------------------------------------------------
 #M::
 	CurrentMode := 2
-	ToolTipInOut("Media Control")
+	ToolTipInOut("Media")
 	Return
 
 #W::
@@ -30,3 +33,32 @@
 	CurrentMode := 4
 	ToolTipInOut("AutoHotkey")
 	Return
+
+#S::
+	CurrentMode := 5
+	ToolTipInOut("Security")
+	Return
+
+;--------------------------------------------------------------
+; Global modal control
+;--------------------------------------------------------------
+#If (CurrentMode > 1)
+	Esc::
+	#[::
+		ExitToMainMode()
+		Return
+#If
+
+;--------------------------------------------------------------
+; Methods
+;--------------------------------------------------------------
+
+ExitToMainMode()
+{
+	global CurrentMode  := 1
+
+	ToolTipInOut("Main Mode")
+
+	Return
+}
+

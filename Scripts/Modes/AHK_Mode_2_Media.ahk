@@ -1,5 +1,5 @@
 #If (CurrentMode = 2)
-	#M::ExitCurrentMode()
+	#M::ExitToMainMode()
 		Return
 	
 	 h::Send {Media_Prev}
@@ -24,7 +24,7 @@
 	 n::
 	+n::
 		OpenIfFileExists("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Netflix")
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 
 	 p::Send {Media_Play_Pause}
@@ -37,10 +37,14 @@
 		SendAndExit("{Media_Stop}")
 		Return
 	
-	 s::OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
+	 s::
+	 	OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
+	 	Sleep, 100
+	 	WinHide, "spotify"
+	 	Return
 	+s::
 		OpenIfFileExists(Format("{1}{2}", AppData,"\Spotify\Spotify.exe"))
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 
 	Delete & s::Process, Close, Spotify.exe
@@ -53,7 +57,6 @@
 	e::
 	f::
 	g::
-	i::
 	o::
 	r::
 	t::

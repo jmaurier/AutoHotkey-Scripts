@@ -1,6 +1,11 @@
 ; Core functionality updates
 + Update README.md with all current modes and HKs
 + Make a dictionary to hold mode names and numbers
++ Use classification for modes
++ Get baseline for an architecture
++ Down low static option
++ Secure mode
++ functionality for NUM & hot key (60v to set volume to 60)
 
 ; Features
 + Add functionality to control hue lamps

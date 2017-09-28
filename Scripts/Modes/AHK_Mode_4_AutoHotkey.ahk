@@ -1,5 +1,5 @@
 #If (CurrentMode = 4)
-	#A::ExitCurrentMode()
+	#A::ExitToMainMode()
 
 	; Auto commit ALL of the AutoHotkey project
 	c::
@@ -50,11 +50,17 @@
 
 		FileAppend, 
 		(
+			ToolTip
+			ToolTip "Closing..."
+			Sleep, 750
 			Process, Close, AHK.exe
+			ToolTip "Compiling..."
+			Sleep, 750
 			Run Ahk2exe.exe /in AHK.ahk
+			ToolTip "Restarting..."
 			Sleep, 750
 			Run %A_ScriptDir%\AHK.exe
-
+			ToolTip
 			FileDelete, %A_WorkingDir%\restart.ahk
 		)
 		, %A_WorkingDir%\restart.ahk
@@ -65,7 +71,8 @@
 	; Window information
 	w::
 		id := WinExist("A")
-		MsgBox % id
+		WinGetTitle, Title, A
+		MsgBox % id Title
 		Return
 
 	;Turn off normal typing while in media mode.

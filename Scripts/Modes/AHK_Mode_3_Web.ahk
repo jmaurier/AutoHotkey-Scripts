@@ -1,33 +1,33 @@
 #If (CurrentMode = 3)
-	#W::ExitCurrentMode()
+	#W::ExitToMainMode()
 
 	a::
 		Run, https://autohotkey.com/docs/AutoHotkey.htm
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	d::
 		Run, https://www.dcu.org/
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	g::
 		Run, https://github.com/
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	h::
 		Run, https://www.hackerrank.com/dashboard
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	n::
 		Run, https://www.navient.com/
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	r::
 		Run, https://www.reddit.com/
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 	s::
 		Run, https://www.google.com/
-		ExitCurrentMode()
+		ExitToMainMode()
 		Return
 
 	;Turn off normal typing while in media mode.

@@ -1,1 +1,2 @@
-+
++ Tool tip for startup notification
++ Locing the screen with win + L calls exit to main mode

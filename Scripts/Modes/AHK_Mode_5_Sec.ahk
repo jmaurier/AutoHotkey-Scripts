@@ -1,25 +1,6 @@
 #If (CurrentMode = 5)
 	#S::ExitToMainMode()
 		Return
-
-	s::
-		WinGet, PID, PID, A
-
-		Input, xTime, T3, {Enter}
-
-		If xTime is integer
-		{
-			;SetTimer, KillProcess(PID), xTime
-			Process, Close, %PID%, %xTime%
-		}
-
-		Return
-
-	KillProcess(PID)
-	{
-		Process, Close, %PID%, %xTime%
-
-	}
 	
 	a::
 	b::
@@ -39,6 +20,7 @@
 	p::
 	q::
 	r::
+	s::
 	t::
 	u::
 	v::

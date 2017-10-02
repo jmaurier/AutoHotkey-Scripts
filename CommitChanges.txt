@@ -1,2 +1,2 @@
-+ Tool tip for startup notification
-+ Locing the screen with win + L calls exit to main mode
++ Added new folder mode
++ Added Folder that will be specific to individual PCs

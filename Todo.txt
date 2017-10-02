@@ -6,6 +6,7 @@
 + Down low static option
 + Secure mode
 + functionality for NUM & hot key (60v to set volume to 60)
++ add PC specific file system for hotstrings, applications, etc...
 
 ; Features
 + Add functionality to control hue lamps

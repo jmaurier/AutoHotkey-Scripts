@@ -1,3 +1,1 @@
-+ Added two hkom level hotstrings for 1hkom and 2hkom
-+ Removed google search from clipboard file
-+ Added hk for searching highlighted text to web mode with ctrl + s 
++ Git commit and pull exit to main mode once complete

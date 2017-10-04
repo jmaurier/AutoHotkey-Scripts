@@ -19,6 +19,7 @@
 
 		; Recompile and run
 		Gosub, r
+		ExitToMainMode()
 		Return
 
 	e::
@@ -37,6 +38,7 @@
 
 		; Recompile and run
 		Gosub, r
+		ExitToMainMode()
 		Return
 
 	; Close the AHK.exe process

@@ -30,6 +30,13 @@
 		ExitToMainMode()
 		Return
 
+	^s::
+	  	clipBoardTemp := Clipboard
+	    SendAndSleep("^c", 50)
+	  	Run, http://www.google.com/search?q=%clipboard%
+	  	Clipboard := clipBoardTemp
+	  	Return
+
 	;Turn off normal typing while in media mode.
 	b::
 	c::

@@ -27,7 +27,10 @@
 		ExitToMainMode()
 		Return
 
-	 p::Send {Media_Play_Pause}
+	 p::
+	 	Send {Media_Play_Pause}
+	 	;SoundGet, OutputVar [, ComponentType, ControlType, DeviceNumber]
+	 	Return
 	+p::
 		SendAndExit("{Media_Play_Pause}")
 		Return

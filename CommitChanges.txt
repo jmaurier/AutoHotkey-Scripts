@@ -1,1 +1,2 @@
-+ Git commit and pull exit to main mode once complete
+- removed #!H because it wasnt doing anything
++ added #o to open the highlighted file path 

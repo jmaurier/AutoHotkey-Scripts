@@ -17,7 +17,6 @@
 		ExitToMainMode()
 		Return
 
-
 	r::
 
 	a::
@@ -29,7 +28,6 @@
 	x::
 	c::
 	v::
-
 		ToolTipReset("Folder...", 750)
 		Return
 #If

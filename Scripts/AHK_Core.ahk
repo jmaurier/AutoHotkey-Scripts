@@ -7,14 +7,17 @@
 	ExitToMainMode()
 	Return
 
-; TODO: add funcctionality to show or hide hidden files and folders
-#!H::
-	Run, C:\ProgramData\Microsoft\Windows\Start Menu\Programs\FileExplorerOptions
-	Return
+#o::
+{
+  	clipBoardTemp := Clipboard
+    SendAndSleep("^c", 50)
+  	Run, %clipboard%
+  	Clipboard := clipBoardTemp
+  	Return
+}
 	
 ; No more stupid caps lock!
 CapsLock::Ctrl
-
 
 ;--------------------------------------------------------------
 ; Labels

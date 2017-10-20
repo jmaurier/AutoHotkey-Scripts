@@ -1,2 +1,2 @@
-- removed #!H because it wasnt doing anything
-+ added #o to open the highlighted file path 
++ Using global varible %A_MyDocuments% to open my documents folder in folder mode (win + e)
++ Modified the readme file's hotstrings section

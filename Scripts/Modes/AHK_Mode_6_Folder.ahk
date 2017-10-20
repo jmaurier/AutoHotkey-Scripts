@@ -13,7 +13,7 @@
 		Return
 
 	e::
-		Run, CD:\Users\jmaurier\Documents
+		Run, %A_MyDocuments%
 		ExitToMainMode()
 		Return
 

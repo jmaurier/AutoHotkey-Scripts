@@ -1,2 +1,4 @@
-+ Using global varible %A_MyDocuments% to open my documents folder in folder mode (win + e)
-+ Modified the readme file's hotstrings section
++ Added #H for left arrow
++ Added #U for up arrow
++ Added #J for down arrow
++ Added #K for right arrow

@@ -1,19 +1,43 @@
 ;--------------------------------------------------------------
 ; Windows functionality
 ;--------------------------------------------------------------
-#l::
+#L::
 	Send, {Media_Stop}
 	Send, {Volume_Mute}
 	ExitToMainMode()
 	Return
 
-#o::
+#O::
 {
   	clipBoardTemp := Clipboard
     SendAndSleep("^c", 50)
   	Run, %clipboard%
   	Clipboard := clipBoardTemp
   	Return
+}
+
+#H::
+{
+	Send, {Left}
+	Return
+}
+
+#K::
+{
+	Send, {Right}
+	Return
+}
+
+#U::
+{
+	Send {Up}
+	Return
+}
+
+#J::
+{
+	Send {Down}
+	Return
 }
 	
 ; No more stupid caps lock!

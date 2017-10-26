@@ -1,4 +1,1 @@
-+ Added #H for left arrow
-+ Added #U for up arrow
-+ Added #J for down arrow
-+ Added #K for right arrow
++ Added extra functionality for uhjk navigation

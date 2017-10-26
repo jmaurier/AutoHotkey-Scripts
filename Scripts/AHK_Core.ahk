@@ -16,15 +16,65 @@
   	Return
 }
 
+!BackSpace::
+{
+	Send, {Delete}
+	Return
+}
+
+;;==============================================================
+;; Arrow key
+;;==============================================================
+
 #H::
 {
 	Send, {Left}
+	Return
+}
+^#H::
+{
+	Send, {LCtrl Down}{Left}{LCtrl Up}
+	Return
+}
++#H::
+{
+	Send, {Shift Down}{Left}{Shift Up}
+	Return
+}
+^+#H::
+{
+	Send, {Ctrl Down}{Shift Down}{Left}{Shift Up}{Ctrl Up}
+	Return
+}
+!#H::
+{
+	Send, {Home}
 	Return
 }
 
 #K::
 {
 	Send, {Right}
+	Return
+}
+^#K::
+{
+	Send, {LCtrl Down}{Right}{LCtrl Up}
+	Return
+}
++#K::
+{
+	Send, {Shift Down}{Right}{Shift Up}
+	Return
+}
+^+#K::
+{
+	Send, {Ctrl Down}{Shift Down}{Right}{Shift Up}{Ctrl Up}
+	Return
+}
+!#K::
+{
+	Send, {End}
 	Return
 }
 
@@ -34,11 +84,27 @@
 	Return
 }
 
++#U::
+{
+	Send, {LShift Down}{Up}{LShift Up}
+	Return
+}
+
 #J::
 {
 	Send {Down}
 	Return
 }
+
++#J::
+{
+	Send, {LShift Down}{Down}{LShift Up}
+	Return
+}
+
+;;==============================================================
+;; home and end
+;;==============================================================
 	
 ; No more stupid caps lock!
 CapsLock::Ctrl

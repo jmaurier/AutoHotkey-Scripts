@@ -38,26 +38,26 @@ Loop C:\tmp\clipvar*.txt
     clipindex = 0
     Return
 
-; Scroll up and down through clipboard history
-^#!j::
-    if clipindex > 1
-    {
-      clipindex -= 1
-    }
-    thisclip := clipvar%clipindex%
-    clipboard := thisclip
-    ToolTipReset(clipboard , 750)
-    Return
+; ; Scroll up and down through clipboard history
+; ^#!j::
+;     if clipindex > 1
+;     {
+;       clipindex -= 1
+;     }
+;     thisclip := clipvar%clipindex%
+;     clipboard := thisclip
+;     ToolTipReset(clipboard , 750)
+;     Return
 
-^#!k::
-    if clipindex < %maxindex%
-    {
-      clipindex += 1
-    }
-    thisclip := clipvar%clipindex%
-    clipboard := thisclip
-    ToolTipReset(clipboard , 750)
-    Return
+; ^#!k::
+;     if clipindex < %maxindex%
+;     {
+;       clipindex += 1
+;     }
+;     thisclip := clipvar%clipindex%
+;     clipboard := thisclip
+;     ToolTipReset(clipboard , 750)
+;     Return
 
 ; Add clipboard contents to the stack when you copy or paste using the keyboard
 ^+x::

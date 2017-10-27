@@ -1,1 +1,3 @@
-+ Added extra functionality for uhjk navigation
++ Added VIM escape with win + [
++ made all uhjk navigation keys work with ctrl shift and alt
++ now using SendInput for uhjk navigation 

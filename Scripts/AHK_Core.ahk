@@ -25,89 +25,49 @@
 ;;==============================================================
 ;; Arrow key
 ;;==============================================================
+   #H::SendInput,    {left}
+  ^#H::SendInput,   ^{Left}
+  !#H::SendInput,   !{Left}
+  +#H::SendInput,   +{Left}
+ ^!#H::SendInput,  ^!{Left}
+ ^+#H::SendInput,  ^+{Left}
+ !+#H::SendInput,  !+{Left}
+^!+#H::SendInput, ^!+{Left}
+   #6::SendInput,    {Home}
 
-#H::
-{
-	Send, {Left}
-	Return
-}
-^#H::
-{
-	Send, {LCtrl Down}{Left}{LCtrl Up}
-	Return
-}
-+#H::
-{
-	Send, {Shift Down}{Left}{Shift Up}
-	Return
-}
-^+#H::
-{
-	Send, {Ctrl Down}{Shift Down}{Left}{Shift Up}{Ctrl Up}
-	Return
-}
-!#H::
-{
-	Send, {Home}
-	Return
-}
+   #K::SendInput,    {Right}
+  ^#K::SendInput,   ^{Right}
+  !#K::SendInput,   !{Right}
+  +#K::SendInput,   +{Right}
+ ^!#K::SendInput,  ^!{Right}
+ ^+#K::SendInput,  ^+{Right}
+ !+#K::SendInput,  !+{Right}
+^!+#K::SendInput, ^!+{Right}
+   #4::SendInput,    {End}
 
-#K::
-{
-	Send, {Right}
-	Return
-}
-^#K::
-{
-	Send, {LCtrl Down}{Right}{LCtrl Up}
-	Return
-}
-+#K::
-{
-	Send, {Shift Down}{Right}{Shift Up}
-	Return
-}
-^+#K::
-{
-	Send, {Ctrl Down}{Shift Down}{Right}{Shift Up}{Ctrl Up}
-	Return
-}
-!#K::
-{
-	Send, {End}
-	Return
-}
+   #J::SendInput,    {Down}
+  ^#J::SendInput,   ^{Down}
+  !#J::SendInput,   !{PgDn}
+  +#J::SendInput,   +{Down}
+ ^!#J::SendInput,  ^!{Down}
+ ^+#J::SendInput,  ^+{Down}
+ !+#J::SendInput,  !+{Down}
+^!+#J::SendInput, ^!+{Down}
 
-#U::
-{
-	Send {Up}
-	Return
-}
-
-+#U::
-{
-	Send, {LShift Down}{Up}{LShift Up}
-	Return
-}
-
-#J::
-{
-	Send {Down}
-	Return
-}
-
-+#J::
-{
-	Send, {LShift Down}{Down}{LShift Up}
-	Return
-}
-
-;;==============================================================
-;; home and end
-;;==============================================================
+   #U::SendInput,    {Up}
+  ^#U::SendInput,   ^{Up}
+  !#U::SendInput,   !{PgUp}
+  +#U::SendInput,   +{Up}
+ ^!#U::SendInput,  ^!{Up}
+ ^+#U::SendInput,  ^+{Up}
+ !+#U::SendInput,  !+{Up}
+^!+#U::SendInput, ^!+{Up}
 	
 ; No more stupid caps lock!
 CapsLock::Ctrl
+
+; VIM Escape
+#[::SendInput, {Esc}
 
 ;--------------------------------------------------------------
 ; Labels

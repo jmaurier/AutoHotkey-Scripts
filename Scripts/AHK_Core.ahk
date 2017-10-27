@@ -16,12 +16,23 @@
   	Return
 }
 
+; alternate delete keys
  !BackSpace::SendInput,  {Delete}
 +!BackSpace::SendInput, ^{Delete}
 
-^#z::SendInput, ^#{Left}
-^#x::SendInput, ^#{Right}
+; Switch desktops
+^#Z::SendInput, ^#{Left}
+^#X::SendInput, ^#{Right}
 
+; home end
+#Y::SendInput, {Home}
+#I::SendInput, {End}
+
+; No more stupid caps lock!
+CapsLock::Ctrl
+
+; VIM Escape
+#[::SendInput, {Esc}
 
 ;;==============================================================
 ;; Arrow key
@@ -34,7 +45,6 @@
  ^+#H::SendInput,  ^+{Left}
  !+#H::SendInput,  !+{Left}
 ^!+#H::SendInput, ^!+{Left}
-   #6::SendInput,    {Home}
 
    #K::SendInput,    {Right}
   ^#K::SendInput,   ^{Right}
@@ -44,11 +54,10 @@
  ^+#K::SendInput,  ^+{Right}
  !+#K::SendInput,  !+{Right}
 ^!+#K::SendInput, ^!+{Right}
-   #4::SendInput,    {End}
 
    #J::SendInput,    {Down}
   ^#J::SendInput,   ^{Down}
-  !#J::SendInput,   !{PgDn}
+  !#J::SendInput,   !{Down}
   +#J::SendInput,   +{Down}
  ^!#J::SendInput,  ^!{Down}
  ^+#J::SendInput,  ^+{Down}
@@ -57,19 +66,13 @@
 
    #U::SendInput,    {Up}
   ^#U::SendInput,   ^{Up}
-  !#U::SendInput,   !{PgUp}
+  !#U::SendInput,   !{Up}
   +#U::SendInput,   +{Up}
  ^!#U::SendInput,  ^!{Up}
  ^+#U::SendInput,  ^+{Up}
  !+#U::SendInput,  !+{Up}
 ^!+#U::SendInput, ^!+{Up}
 	
-; No more stupid caps lock!
-CapsLock::Ctrl
-
-; VIM Escape
-#[::SendInput, {Esc}
-
 ;--------------------------------------------------------------
 ; Labels
 ;--------------------------------------------------------------

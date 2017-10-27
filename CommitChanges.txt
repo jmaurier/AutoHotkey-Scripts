@@ -1,2 +1,1 @@
-+ Added shift+alt+back to send ctrl+delete
-+ switch desktop screens with ctrl win z/x
++ Added navigation mode #N

@@ -1,3 +1,2 @@
-+ Added VIM escape with win + [
-+ made all uhjk navigation keys work with ctrl shift and alt
-+ now using SendInput for uhjk navigation 
++ Added shift+alt+back to send ctrl+delete
++ switch desktop screens with ctrl win z/x

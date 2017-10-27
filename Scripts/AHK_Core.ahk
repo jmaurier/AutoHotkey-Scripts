@@ -16,11 +16,12 @@
   	Return
 }
 
-!BackSpace::
-{
-	Send, {Delete}
-	Return
-}
+ !BackSpace::SendInput,  {Delete}
++!BackSpace::SendInput, ^{Delete}
+
+^#z::SendInput, ^#{Left}
+^#x::SendInput, ^#{Right}
+
 
 ;;==============================================================
 ;; Arrow key

@@ -10,7 +10,5 @@
 
 ; Features
 + Add functionality to control hue lamps
-+ Add hk to show/hide hidden files
-+ Add hk to show file extentions
 + Add hk to open C:\ProgramData\Microsoft\Windows\Start Menu\Programs
 + Add Greek letter mode

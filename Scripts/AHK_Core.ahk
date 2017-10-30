@@ -34,10 +34,13 @@ CapsLock::Ctrl
 ; VIM Escape
 #[::SendInput, {Esc}
 
+; Turn off left windows key
+LWin::Return
+
 ;;==============================================================
 ;; Arrow key
 ;;==============================================================
-   #H::SendInput,    {left}
+   #H::SendInput,    {Left}
   ^#H::SendInput,   ^{Left}
   !#H::SendInput,   !{Left}
   +#H::SendInput,   +{Left}

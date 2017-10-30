@@ -53,8 +53,7 @@ CapsLock::Ctrl
 ^#[::SendInput, {Esc}{LWin}
 
 ; Left win key no longer opent the start menu
-*LWin::Send {Blind}{LWin Down}
-*LWin Up::Send {Blind}{vk00}{LWin Up}
+; *L; Up::Send {Blind}{vk00}{LWin Up}
 
 ;;==============================================================
 ;; Arrow key
@@ -94,7 +93,7 @@ CapsLock::Ctrl
  ^+#U::SendInput,  ^+{Up}
  !+#U::SendInput,  !+{Up}
 ^!+#U::SendInput, ^!+{Up}
-	
+
 ;--------------------------------------------------------------
 ; Labels
 ;--------------------------------------------------------------

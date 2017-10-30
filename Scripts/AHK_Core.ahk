@@ -34,8 +34,9 @@ CapsLock::Ctrl
 ; VIM Escape
 #[::SendInput, {Esc}
 
-; Turn off left windows key
-LWin::Return
+; Left win key no longer opent the start menu
+*LWin::Send {Blind}{LWin Down}
+*LWin Up::Send {Blind}{vk00}{LWin Up}
 
 ;;==============================================================
 ;; Arrow key

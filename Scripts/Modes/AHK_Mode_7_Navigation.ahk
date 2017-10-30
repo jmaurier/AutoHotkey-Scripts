@@ -1,10 +1,13 @@
 #If (CurrentMode = 7)
-	#N::ExitToMainMode()
+	q::ExitToMainMode()
 
 	u::Up
 	h::Left
 	j::Down
 	k::Right
+	y::Home
+	i::End
+
 
 	;Turn off normal typing while in media mode.
 	a::
@@ -14,19 +17,16 @@
 	e::
 	f::
 	g::
-	i::
 	l::
 	m::
 	o::
 	p::
-	q::
 	r::
 	s::
 	t::
 	v::
 	w::
 	x::
-	y::
 	z::
 		ToolTipReset("Navigation...", 750)
 		Return

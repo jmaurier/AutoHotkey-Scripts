@@ -1,1 +1,4 @@
-+ Left win key no longer opent the start menu but still works with all other hot keys
++ Open start menu with ctrl esc
++ Home(Y) and End(I) now support all modifier keys !^+
++ all modes now exit with q
++ Escape no longer exits a mode

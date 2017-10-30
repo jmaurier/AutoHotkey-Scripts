@@ -1,5 +1,5 @@
 #If (CurrentMode = 3)
-	#W::ExitToMainMode()
+	q::ExitToMainMode()
 
 	a::
 		Run, https://autohotkey.com/docs/AutoHotkey.htm
@@ -49,7 +49,6 @@
 	m::
 	o::
 	p::
-	q::
 	t::
 	u::
 	v::

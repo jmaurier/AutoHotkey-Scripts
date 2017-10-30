@@ -1,5 +1,5 @@
 #If (CurrentMode = 4)
-	#A::ExitToMainMode()
+	q::ExitToMainMode()
 
 	; Auto commit ALL of the AutoHotkey project
 	c::
@@ -40,11 +40,6 @@
 		Gosub, r
 		ExitToMainMode()
 		Return
-
-	; Close the AHK.exe process
-	q::
-		ToolTipInOut("Closing...")
-		ExitApp, 0
 
 	r::
 		if FileExist( "restart.ahk" )

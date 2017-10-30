@@ -60,7 +60,6 @@
 ; Global modal control
 ;--------------------------------------------------------------
 #If (CurrentMode > 1)
-	Esc::
 	#[::
 		ExitToMainMode()
 		Return

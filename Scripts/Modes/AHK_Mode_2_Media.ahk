@@ -1,5 +1,5 @@
 #If (CurrentMode = 2)
-	#M::ExitToMainMode()
+	q::ExitToMainMode()
 		Return
 	
 	 h::Send {Media_Prev}
@@ -33,11 +33,6 @@
 	 	Return
 	+p::
 		SendAndExit("{Media_Play_Pause}")
-		Return
-
-	 q::Send {Media_Stop}
-	+q::
-		SendAndExit("{Media_Stop}")
 		Return
 	
 	 s::

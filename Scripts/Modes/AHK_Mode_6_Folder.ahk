@@ -2,10 +2,7 @@
 	;#F::ExitToMainMode()
 		;Return
 
-	q::
-		Run, %A_Desktop%
-		ExitToMainMode()
-		Return
+	q::ExitToMainMode()
 
 	w::
 		Run, C:\Users\jmaurier\Downloads

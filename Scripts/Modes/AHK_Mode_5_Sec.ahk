@@ -1,5 +1,5 @@
 #If (CurrentMode = 5)
-	#S::ExitToMainMode()
+	q::ExitToMainMode()
 		Return
 	
 	a::
@@ -18,7 +18,6 @@
 	n::
 	o::
 	p::
-	q::
 	r::
 	s::
 	t::

@@ -24,15 +24,33 @@
 ^#Z::SendInput, ^#{Left}
 ^#X::SendInput, ^#{Right}
 
-; home end
-#Y::SendInput, {Home}
-#I::SendInput, {End}
+; Home
+   #Y::SendInput,    {Home}
+  ^#Y::SendInput,   ^{Home}
+  !#Y::SendInput,   !{Home}
+  +#Y::SendInput,   +{Home}
+ ^!#Y::SendInput,  ^!{Home}
+ ^+#Y::SendInput,  ^+{Home}
+ !+#Y::SendInput,  !+{Home}
+^!+#Y::SendInput, ^!+{Home}
+; End
+   #I::SendInput,    {End}
+  ^#I::SendInput,   ^{End}
+  !#I::SendInput,   !{End}
+  +#I::SendInput,   +{End}
+ ^!#I::SendInput,  ^!{End}
+ ^+#I::SendInput,  ^+{End}
+ !+#I::SendInput,  !+{End}
+^!+#I::SendInput, ^!+{End}
 
 ; No more stupid caps lock!
 CapsLock::Ctrl
 
 ; VIM Escape
 #[::SendInput, {Esc}
+
+; Open start menu with ctrl esc
+^#[::SendInput, {Esc}{LWin}
 
 ; Left win key no longer opent the start menu
 *LWin::Send {Blind}{LWin Down}

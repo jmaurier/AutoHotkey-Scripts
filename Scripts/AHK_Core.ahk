@@ -1,13 +1,13 @@
 ;--------------------------------------------------------------
 ; Windows functionality
 ;--------------------------------------------------------------
-#L::
+<#L::
 	Send, {Media_Stop}
 	Send, {Volume_Mute}
 	ExitToMainMode()
 	Return
 
-#O::
+<#O::
 {
   	clipBoardTemp := Clipboard
     SendAndSleep("^c", 50)
@@ -21,78 +21,78 @@
 +!BackSpace::SendInput, ^{Delete}
 
 ; Switch desktops
-^#Z::SendInput, ^#{Left}
-^#X::SendInput, ^#{Right}
+^<#Z::SendInput, ^#{Left}
+^<#X::SendInput, ^#{Right}
 
 ; Home
-   #Y::SendInput,    {Home}
-  ^#Y::SendInput,   ^{Home}
-  !#Y::SendInput,   !{Home}
-  +#Y::SendInput,   +{Home}
- ^!#Y::SendInput,  ^!{Home}
- ^+#Y::SendInput,  ^+{Home}
- !+#Y::SendInput,  !+{Home}
-^!+#Y::SendInput, ^!+{Home}
+   <#Y::SendInput,    {Home}
+  ^<#Y::SendInput,   ^{Home}
+  !<#Y::SendInput,   !{Home}
+  +<#Y::SendInput,   +{Home}
+ ^!<#Y::SendInput,  ^!{Home}
+ ^+<#Y::SendInput,  ^+{Home}
+ !+<#Y::SendInput,  !+{Home}
+^!+<#Y::SendInput, ^!+{Home}
 ; End
-   #I::SendInput,    {End}
-  ^#I::SendInput,   ^{End}
-  !#I::SendInput,   !{End}
-  +#I::SendInput,   +{End}
- ^!#I::SendInput,  ^!{End}
- ^+#I::SendInput,  ^+{End}
- !+#I::SendInput,  !+{End}
-^!+#I::SendInput, ^!+{End}
+   <#I::SendInput,    {End}
+  ^<#I::SendInput,   ^{End}
+  !<#I::SendInput,   !{End}
+  +<#I::SendInput,   +{End}
+ ^!<#I::SendInput,  ^!{End}
+ ^+<#I::SendInput,  ^+{End}
+ !+<#I::SendInput,  !+{End}
+^!+<#I::SendInput, ^!+{End}
 
 ; No more stupid caps lock!
 CapsLock::Ctrl
 
 ; VIM Escape
-#[::SendInput, {Esc}
+<#[::SendInput, {Esc}
 
 ; Open start menu with ctrl esc
-^#[::SendInput, {Esc}{LWin}
+^<#[::SendInput, {Esc}{LWin}
 
-; Left win key no longer opent the start menu
-; *L; Up::Send {Blind}{vk00}{LWin Up}
+
+LWin::SendInput, {VK00}
 
 ;;==============================================================
 ;; Arrow key
 ;;==============================================================
-   #H::SendInput,    {Left}
-  ^#H::SendInput,   ^{Left}
-  !#H::SendInput,   !{Left}
-  +#H::SendInput,   +{Left}
- ^!#H::SendInput,  ^!{Left}
- ^+#H::SendInput,  ^+{Left}
- !+#H::SendInput,  !+{Left}
-^!+#H::SendInput, ^!+{Left}
+   <#H::SendInput,    {Left}
+  ^<#H::SendInput,   ^{Left}
+  !<#H::SendInput,   !{Left}
+  +<#H::SendInput,   +{Left}
+ ^!<#H::SendInput,  ^!{Left}
+ ^+<#H::SendInput,  ^+{Left}
+ !+<#H::SendInput,  !+{Left}
+^!+<#H::SendInput, ^!+{Left}
 
-   #K::SendInput,    {Right}
-  ^#K::SendInput,   ^{Right}
-  !#K::SendInput,   !{Right}
-  +#K::SendInput,   +{Right}
- ^!#K::SendInput,  ^!{Right}
- ^+#K::SendInput,  ^+{Right}
- !+#K::SendInput,  !+{Right}
-^!+#K::SendInput, ^!+{Right}
+   <#K::SendInput,    {Right}
+  ^<#K::SendInput,   ^{Right}
+  !<#K::SendInput,   !{Right}
+  +<#K::SendInput,   +{Right}
+ ^!<#K::SendInput,  ^!{Right}
+ ^+<#K::SendInput,  ^+{Right}
+ !+<#K::SendInput,  !+{Right}
+^!+<#K::SendInput, ^!+{Right}
 
-   #J::SendInput,    {Down}
-  ^#J::SendInput,   ^{Down}
-  !#J::SendInput,   !{Down}
-  +#J::SendInput,   +{Down}
- ^!#J::SendInput,  ^!{Down}
- ^+#J::SendInput,  ^+{Down}
- !+#J::SendInput,  !+{Down}
-^!+#J::SendInput, ^!+{Down}
+   <#J::SendInput,    {Down}
+  ^<#J::SendInput,   ^{Down}
+  !<#J::SendInput,   !{Down}
+  +<#J::SendInput,   +{Down}
+ ^!<#J::SendInput,  ^!{Down}
+ ^+<#J::SendInput,  ^+{Down}
+ !+<#J::SendInput,  !+{Down}
+^!+<#J::SendInput, ^!+{Down}
 
-   #U::SendInput,    {Up}
-  ^#U::SendInput,   ^{Up}
-  !#U::SendInput,   !{Up}
-  +#U::SendInput,   +{Up}
- ^!#U::SendInput,  ^!{Up}
- ^+#U::SendInput,  ^+{Up}
- !+#U::SendInput,  !+{Up}
-^!+#U::SendInput, ^!+{Up}
+   <#U::SendInput,    {Up}
+  ^<#U::SendInput,   ^{Up}
+  !<#U::SendInput,   !{Up}
+  +<#U::SendInput,   +{Up}
+ ^!<#U::SendInput,  ^!{Up}
+ ^+<#U::SendInput,  ^+{Up}
+ !+<#U::SendInput,  !+{Up}
+^!+<#U::SendInput, ^!+{Up}
 
 ;--------------------------------------------------------------
 ; Labels

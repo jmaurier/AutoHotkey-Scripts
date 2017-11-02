@@ -1,1 +1,1 @@
-+ Navigation mode turns 1-9, -, and = into F1-F12
++ Remove left winkey start menu sunctionality

@@ -24,11 +24,29 @@
 	-::F11
 	=::F12
 
+	^1::F13
+	^2::F14
+	^3::F15
+	^4::F16
+	^5::F17
+	^6::F18
+	^7::F19
+	^8::F20
+	^9::F21
+	^0::F22
+	^-::F23
+	^=::F24
+
+	;;==============================================================
+	;; Other Functionality
+	;;==============================================================
+	c::SendInput, ^c
+	v::SendInput, ^v
+	x::SendInput, ^x
 
 	;Turn off normal typing while in media mode.
 	a::
 	b::
-	c::
 	d::
 	e::
 	f::
@@ -40,9 +58,7 @@
 	r::
 	s::
 	t::
-	v::
 	w::
-	x::
 	z::
 		ToolTipReset("Navigation...", 750)
 		Return

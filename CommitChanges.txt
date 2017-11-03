@@ -1,2 +1,2 @@
-+ Win+Alt+Back or Win+Delete triggers End Home Home Shift+End Delete Delete to delete a like of text
-+ Win + Q toggles the suspension of all AutoHotkey functionality
++ Added copy paste and cut with c, v, and x
++ Added F13-F24

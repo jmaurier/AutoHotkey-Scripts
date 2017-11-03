@@ -16,13 +16,16 @@
   	Return
 }
 
+;Delete a line of text
+<#!BackSpace::SendInput, {End}{Home}{Home}{Shift Down}{End}{Delete}{Delete}{Shift Up}
+
 ; alternate delete keys
  !BackSpace::SendInput,  {Delete}
 +!BackSpace::SendInput, ^{Delete}
 
 ; Switch desktops
-^<#Z::SendInput, ^#{Left}
-^<#X::SendInput, ^#{Right}
+  ^<#Z::SendInput, ^#{Left}
+  ^<#X::SendInput, ^#{Right}
 
 ; Home
    <#Y::SendInput,    {Home}

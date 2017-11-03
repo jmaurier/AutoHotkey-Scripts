@@ -2,6 +2,8 @@
 	q::ExitToMainMode()
 		Return
 	
+	s::Suspend, Toggle
+
 	a::
 	b::
 	c::
@@ -19,7 +21,6 @@
 	o::
 	p::
 	r::
-	s::
 	t::
 	u::
 	v::

@@ -55,8 +55,14 @@ CapsLock::Ctrl
 ; Open start menu with ctrl esc
 ^<#[::SendInput, {Esc}{LWin}
 
-
+;;==============================================================
+;; windows keys
+;;==============================================================
+;Left windows key doesnt do anything on its own
 LWin::SendInput, {VK00}
+<#-::WinMinimize, A
+<#=::WinRestore,  A
+<#+::WinMaximize, A
 
 ;;==============================================================
 ;; Arrow key

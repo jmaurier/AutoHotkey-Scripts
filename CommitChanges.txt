@@ -1,2 +1,1 @@
-+ Added copy paste and cut with c, v, and x
-+ Added F13-F24
++ win -,=, or + will minimize, restore, or maximixe the active window

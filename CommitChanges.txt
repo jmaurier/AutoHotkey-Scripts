@@ -1,1 +1,1 @@
-+ bug fix: Using win+o to open a location will now do a left trim to remove white space before opening.
++ SO gives Stack Overflow as a hot string

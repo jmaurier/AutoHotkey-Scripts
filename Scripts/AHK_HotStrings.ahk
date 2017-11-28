@@ -13,6 +13,7 @@
 :c*:VS::Visual Studio
 :c*:ST::Sublime Text
 :c*:PS::PowerShell
+:c*:SO::Stack Overflow
 
 ;--------------------------------------------------------------	
 ; Text: SQL

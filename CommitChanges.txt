@@ -1,1 +1,1 @@
-+ win -,=, or + will minimize, restore, or maximixe the active window
++

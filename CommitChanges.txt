@@ -1,1 +1,1 @@
-+ SO gives Stack Overflow as a hot string
++ Added Greek letter hot strings in the form /letterName

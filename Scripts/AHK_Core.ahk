@@ -11,7 +11,8 @@
 {
   	clipBoardTemp := Clipboard
     SendAndSleep("^c", 50)
-  	Run, %clipboard%
+    OpenLocation := LTrim(clipboard) 
+  	Run, %OpenLocation%
   	Clipboard := clipBoardTemp
   	Return
 }
@@ -26,25 +27,6 @@
 ; Switch desktops
   ^<#Z::SendInput, ^#{Left}
   ^<#X::SendInput, ^#{Right}
-
-; Home
-   <#Y::SendInput,    {Home}
-  ^<#Y::SendInput,   ^{Home}
-  !<#Y::SendInput,   !{Home}
-  +<#Y::SendInput,   +{Home}
- ^!<#Y::SendInput,  ^!{Home}
- ^+<#Y::SendInput,  ^+{Home}
- !+<#Y::SendInput,  !+{Home}
-^!+<#Y::SendInput, ^!+{Home}
-; End
-   <#I::SendInput,    {End}
-  ^<#I::SendInput,   ^{End}
-  !<#I::SendInput,   !{End}
-  +<#I::SendInput,   +{End}
- ^!<#I::SendInput,  ^!{End}
- ^+<#I::SendInput,  ^+{End}
- !+<#I::SendInput,  !+{End}
-^!+<#I::SendInput, ^!+{End}
 
 ; No more stupid caps lock!
 CapsLock::Ctrl
@@ -67,6 +49,10 @@ LWin::SendInput, {VK00}
 ;;==============================================================
 ;; Arrow key
 ;;==============================================================
+
+;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;--; UHJK
+;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    <#H::SendInput,    {Left}
   ^<#H::SendInput,   ^{Left}
   !<#H::SendInput,   !{Left}
@@ -102,6 +88,26 @@ LWin::SendInput, {VK00}
  ^+<#U::SendInput,  ^+{Up}
  !+<#U::SendInput,  !+{Up}
 ^!+<#U::SendInput, ^!+{Up}
+
+; Home
+   <#Y::SendInput,    {Home}
+  ^<#Y::SendInput,   ^{Home}
+  !<#Y::SendInput,   !{Home}
+  +<#Y::SendInput,   +{Home}
+ ^!<#Y::SendInput,  ^!{Home}
+ ^+<#Y::SendInput,  ^+{Home}
+ !+<#Y::SendInput,  !+{Home}
+^!+<#Y::SendInput, ^!+{Home}
+; End
+   <#I::SendInput,    {End}
+  ^<#I::SendInput,   ^{End}
+  !<#I::SendInput,   !{End}
+  +<#I::SendInput,   +{End}
+ ^!<#I::SendInput,  ^!{End}
+ ^+<#I::SendInput,  ^+{End}
+ !+<#I::SendInput,  !+{End}
+^!+<#I::SendInput, ^!+{End}
+
 
 ;--------------------------------------------------------------
 ; Labels

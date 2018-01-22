@@ -53,60 +53,60 @@ LWin::SendInput, {VK00}
 ;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;--; UHJK
 ;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   <#H::SendInput,    {Left}
-  ^<#H::SendInput,   ^{Left}
-  !<#H::SendInput,   !{Left}
-  +<#H::SendInput,   +{Left}
- ^!<#H::SendInput,  ^!{Left}
- ^+<#H::SendInput,  ^+{Left}
- !+<#H::SendInput,  !+{Left}
-^!+<#H::SendInput, ^!+{Left}
-
-   <#K::SendInput,    {Right}
-  ^<#K::SendInput,   ^{Right}
-  !<#K::SendInput,   !{Right}
-  +<#K::SendInput,   +{Right}
- ^!<#K::SendInput,  ^!{Right}
- ^+<#K::SendInput,  ^+{Right}
- !+<#K::SendInput,  !+{Right}
-^!+<#K::SendInput, ^!+{Right}
-
-   <#J::SendInput,    {Down}
-  ^<#J::SendInput,   ^{Down}
-  !<#J::SendInput,   !{Down}
-  +<#J::SendInput,   +{Down}
- ^!<#J::SendInput,  ^!{Down}
- ^+<#J::SendInput,  ^+{Down}
- !+<#J::SendInput,  !+{Down}
-^!+<#J::SendInput, ^!+{Down}
-
-   <#U::SendInput,    {Up}
-  ^<#U::SendInput,   ^{Up}
-  !<#U::SendInput,   !{Up}
-  +<#U::SendInput,   +{Up}
- ^!<#U::SendInput,  ^!{Up}
- ^+<#U::SendInput,  ^+{Up}
- !+<#U::SendInput,  !+{Up}
-^!+<#U::SendInput, ^!+{Up}
-
-; Home
-   <#Y::SendInput,    {Home}
-  ^<#Y::SendInput,   ^{Home}
-  !<#Y::SendInput,   !{Home}
-  +<#Y::SendInput,   +{Home}
- ^!<#Y::SendInput,  ^!{Home}
- ^+<#Y::SendInput,  ^+{Home}
- !+<#Y::SendInput,  !+{Home}
-^!+<#Y::SendInput, ^!+{Home}
-; End
-   <#I::SendInput,    {End}
-  ^<#I::SendInput,   ^{End}
-  !<#I::SendInput,   !{End}
-  +<#I::SendInput,   +{End}
- ^!<#I::SendInput,  ^!{End}
- ^+<#I::SendInput,  ^+{End}
- !+<#I::SendInput,  !+{End}
-^!+<#I::SendInput, ^!+{End}
+	;left
+	   <#H::SendInput,    {Left}
+	  ^<#H::SendInput,   ^{Left}
+	  !<#H::SendInput,   !{Left}
+	  +<#H::SendInput,   +{Left}
+	 ^!<#H::SendInput,  ^!{Left}
+	 ^+<#H::SendInput,  ^+{Left}
+	 !+<#H::SendInput,  !+{Left}
+	^!+<#H::SendInput, ^!+{Left}
+	;right
+	   <#K::SendInput,    {Right}
+	  ^<#K::SendInput,   ^{Right}
+	  !<#K::SendInput,   !{Right}
+	  +<#K::SendInput,   +{Right}
+	 ^!<#K::SendInput,  ^!{Right}
+	 ^+<#K::SendInput,  ^+{Right}
+	 !+<#K::SendInput,  !+{Right}
+	^!+<#K::SendInput, ^!+{Right}
+	;down
+	   <#J::SendInput,    {Down}
+	  ^<#J::SendInput,   ^{Down}
+	  !<#J::SendInput,   !{Down}
+	  +<#J::SendInput,   +{Down}
+	 ^!<#J::SendInput,  ^!{Down}
+	 ^+<#J::SendInput,  ^+{Down}
+	 !+<#J::SendInput,  !+{Down}
+	^!+<#J::SendInput, ^!+{Down}
+	;up
+	   <#U::SendInput,    {Up}
+	  ^<#U::SendInput,   ^{Up}
+	  !<#U::SendInput,   !{Up}
+	  +<#U::SendInput,   +{Up}
+	 ^!<#U::SendInput,  ^!{Up}
+	 ^+<#U::SendInput,  ^+{Up}
+	 !+<#U::SendInput,  !+{Up}
+	^!+<#U::SendInput, ^!+{Up}
+	; Home
+	   <#Y::SendInput,    {Home}
+	  ^<#Y::SendInput,   ^{Home}
+	  !<#Y::SendInput,   !{Home}
+	  +<#Y::SendInput,   +{Home}
+	 ^!<#Y::SendInput,  ^!{Home}
+	 ^+<#Y::SendInput,  ^+{Home}
+	 !+<#Y::SendInput,  !+{Home}
+	^!+<#Y::SendInput, ^!+{Home}
+	; End
+	   <#I::SendInput,    {End}
+	  ^<#I::SendInput,   ^{End}
+	  !<#I::SendInput,   !{End}
+	  +<#I::SendInput,   +{End}
+	 ^!<#I::SendInput,  ^!{End}
+	 ^+<#I::SendInput,  ^+{End}
+	 !+<#I::SendInput,  !+{End}
+	^!+<#I::SendInput, ^!+{End}
 
 
 ;--------------------------------------------------------------

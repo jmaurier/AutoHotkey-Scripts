@@ -1,1 +1,3 @@
-+ Added hto key for defining highlighted text win+shift+/ aka #?
+- Removed clipboard adder
+- Removed clipboard manager
+: Will probably start using something like clipjump

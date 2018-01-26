@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-+
-=======
-- Removed clipboard adder
-- Removed clipboard manager
-: Will probably start using something like clipjump
->>>>>>> b6d4d2ea60b20c91a673b8f8e0ee34c2ad6c9870
++ Added C# .NET Google search with win+# (#+3)

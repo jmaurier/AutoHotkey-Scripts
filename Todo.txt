@@ -12,3 +12,12 @@
 + Add functionality to control hue lamps
 + Add hk to open C:\ProgramData\Microsoft\Windows\Start Menu\Programs
 + Add Greek letter mode
+
+; clip board manager
++ Stack copy S
++ Queue copy Q
++ Storage "clumps" 0-9
++ Single unit storage t,u,v
++ View next element
++ dump + dump and destroy
++ copy and split on line break to current clump

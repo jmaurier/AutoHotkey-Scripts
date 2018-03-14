@@ -1,1 +1,1 @@
-+ Added copy and dump for taking notes. use #c to add notes to a history. when you are ready to paste all of the copied text use #v
++

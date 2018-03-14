@@ -28,7 +28,7 @@
 }
 
 ; Dump clips
-#v::
+#+v::
 SetFormat, float, 06.0
 Loop %maxindex%
 {
@@ -46,12 +46,14 @@ clipindex = 0
 Return
 
 ; Add clipboard contents to the stack when you copy or paste using the keyboard
-#c::
+#+c::
 SendInput, ^c
-Sleep 500
+Sleep 300
 clipindex += 1
 clipvar%clipindex% := clipboard . "`r"
 thisclip := clipvar%clipindex%
 ToolTipSleep(thisclip, 750)
 maxindex += 1
 Return
+
+#c

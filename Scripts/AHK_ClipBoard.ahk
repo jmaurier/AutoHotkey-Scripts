@@ -55,5 +55,3 @@ thisclip := clipvar%clipindex%
 ToolTipSleep(thisclip, 750)
 maxindex += 1
 Return
-
-#c

@@ -1,7 +1,9 @@
 ;--------------------------------------------------------------
 ; Script Directory
 ;--------------------------------------------------------------
-ToolTip I'm up!
+SetCapsLockState, AlwaysOff
+
+ToolTip StreamLiner scripts running!
 Sleep, 750
 ToolTip
 
@@ -12,6 +14,7 @@ ToolTip
 #Include, %A_ScriptDir%\Scripts\AHK_Applications.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Modes.ahk
 #Include, %A_ScriptDir%\Scripts\AHK_Core.ahk
+#Include, %A_ScriptDir%\Scripts\AHK_SaltModifier.ahk
 
 ;Never show a tray icon for AutoHotkey.
 #NoTrayIcon

@@ -28,9 +28,6 @@
   ^<#Z::SendInput, ^#{Left}
   ^<#X::SendInput, ^#{Right}
 
-; No more stupid caps lock!
-CapsLock::Ctrl
-
 ; VIM Escape
 <#[::SendInput, {Esc}
 

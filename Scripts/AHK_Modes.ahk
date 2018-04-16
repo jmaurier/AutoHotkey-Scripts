@@ -5,9 +5,7 @@
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_2_Media.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_3_Web.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_4_AutoHotkey.ahk
-#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_5_Sec.ahk
-#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_6_Folder.ahk
-#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_7_Navigation.ahk
+#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_5_Folder.ahk
 
 ;--------------------------------------------------------------
 ; User folder
@@ -41,19 +39,9 @@
 	ToolTipInOut("AutoHotkey")
 	Return
 
-#S::
-	CurrentMode := 5
-	ToolTipInOut("Security")
-	Return
-
 #F::
 	CurrentMode := 6
 	ToolTipInOut("Folder")
-	Return
-
-#N::
-	CurrentMode := 7
-	ToolTipInOut("Navigation")
 	Return
 
 ;--------------------------------------------------------------

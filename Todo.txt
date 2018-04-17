@@ -3,14 +3,10 @@
 + Make a dictionary to hold mode names and numbers
 + Use classification for modes
 + Get baseline for an architecture
-+ Down low static option
-+ Secure mode
 + functionality for NUM & hot key (60v to set volume to 60)
 + add PC specific file system for hotstrings, applications, etc...
 
 ; Features
-+ Add functionality to control hue lamps
-+ Add hk to open C:\ProgramData\Microsoft\Windows\Start Menu\Programs
 + Add Greek letter mode
 
 ; clip board manager
@@ -20,4 +16,3 @@
 + Single unit storage t,u,v
 + View next element
 + dump + dump and destroy
-+ copy and split on line break to current clump

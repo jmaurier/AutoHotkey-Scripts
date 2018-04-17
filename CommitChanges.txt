@@ -1,1 +1,4 @@
-+
++ Made surrounding a key with modifiers easier
+- removed windows key navigation
+- removed media mode
++ add media keys to salt modifier

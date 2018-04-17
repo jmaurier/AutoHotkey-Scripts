@@ -2,7 +2,6 @@
 ; CurrentMode is the global variable that determines what mode
 ; the user is currently in.
 ;--------------------------------------------------------------
-#Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_2_Media.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_3_Web.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_4_AutoHotkey.ahk
 #Include, %A_ScriptDir%\Scripts\Modes\AHK_Mode_5_Folder.ahk
@@ -24,11 +23,6 @@
 ;--------------------------------------------------------------
 ; Mode accessors
 ;--------------------------------------------------------------
-#M::
-	CurrentMode := 2
-	ToolTipInOut("Media")
-	Return
-
 #W::
 	CurrentMode := 3
 	ToolTipInOut("Bookmark")

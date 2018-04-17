@@ -43,69 +43,6 @@ LWin::SendInput, {VK00}
 <#=::WinRestore,  A
 <#+::WinMaximize, A
 
-;;==============================================================
-;; Arrow key
-;;==============================================================
-
-;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;--; UHJK
-;--; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	;left
-	   <#H::SendInput,    {Left}
-	  ^<#H::SendInput,   ^{Left}
-	  !<#H::SendInput,   !{Left}
-	  +<#H::SendInput,   +{Left}
-	 ^!<#H::SendInput,  ^!{Left}
-	 ^+<#H::SendInput,  ^+{Left}
-	 !+<#H::SendInput,  !+{Left}
-	^!+<#H::SendInput, ^!+{Left}
-	;right
-	   <#K::SendInput,    {Right}
-	  ^<#K::SendInput,   ^{Right}
-	  !<#K::SendInput,   !{Right}
-	  +<#K::SendInput,   +{Right}
-	 ^!<#K::SendInput,  ^!{Right}
-	 ^+<#K::SendInput,  ^+{Right}
-	 !+<#K::SendInput,  !+{Right}
-	^!+<#K::SendInput, ^!+{Right}
-	;down
-	   <#J::SendInput,    {Down}
-	  ^<#J::SendInput,   ^{Down}
-	  !<#J::SendInput,   !{Down}
-	  +<#J::SendInput,   +{Down}
-	 ^!<#J::SendInput,  ^!{Down}
-	 ^+<#J::SendInput,  ^+{Down}
-	 !+<#J::SendInput,  !+{Down}
-	^!+<#J::SendInput, ^!+{Down}
-	;up
-	   <#U::SendInput,    {Up}
-	  ^<#U::SendInput,   ^{Up}
-	  !<#U::SendInput,   !{Up}
-	  +<#U::SendInput,   +{Up}
-	 ^!<#U::SendInput,  ^!{Up}
-	 ^+<#U::SendInput,  ^+{Up}
-	 !+<#U::SendInput,  !+{Up}
-	^!+<#U::SendInput, ^!+{Up}
-	; Home
-	   <#Y::SendInput,    {Home}
-	  ^<#Y::SendInput,   ^{Home}
-	  !<#Y::SendInput,   !{Home}
-	  +<#Y::SendInput,   +{Home}
-	 ^!<#Y::SendInput,  ^!{Home}
-	 ^+<#Y::SendInput,  ^+{Home}
-	 !+<#Y::SendInput,  !+{Home}
-	^!+<#Y::SendInput, ^!+{Home}
-	; End
-	   <#I::SendInput,    {End}
-	  ^<#I::SendInput,   ^{End}
-	  !<#I::SendInput,   !{End}
-	  +<#I::SendInput,   +{End}
-	 ^!<#I::SendInput,  ^!{End}
-	 ^+<#I::SendInput,  ^+{End}
-	 !+<#I::SendInput,  !+{End}
-	^!+<#I::SendInput, ^!+{End}
-
-
 ;--------------------------------------------------------------
 ; Labels
 ;--------------------------------------------------------------

@@ -1,7 +1,18 @@
 ;;==============================================================
 ;; Replacing Caps Lock with Salt modifier (Super Alternate)
-;;
+;;==============================================================
+;; Navigation
+;;==============================================================
+;; CapsLock     Escape
+;; BackSpace    Delete
 ;; ijkl         up left down right
+;; u            home
+;; o            end
+;; p            Page Up
+;; ;            Page Down
+;;==============================================================
+;; Advanced Clipboard Features
+;;==============================================================
    ;; x            cut to storage
    ;; c            copy to storage
    ;; v            peek paste from storage
@@ -18,51 +29,83 @@
    ;; shift 1-0    see top of storage
    ;; ctrl 1-0     see full storage
    ;; q            see current storage number and mode (stack/queue)
-;; u            home
-;; o            end
-   ;; f            ctrl f, v
-   ;; F            ctrl c, f, v
-   ;; p            play/pause
-   ;; [,]          preveous/next
-   ;; {,}          volume up/down
-   ;; \            mute
-;;
 ;;==============================================================
-
-
+;; Media features
+;;==============================================================
+;; \            play/pause
+;; |            mute
+;; [,]          preveous/next
+;; {,}          volume down/up
+;;==============================================================
 
 CapsLock::SendInput, {Escape}
 CapsLock & BackSpace::SendInput, {Delete}
-;;==============================================================
-;; Arrow keys, home, and end
-;;   i    |   ↑
-;; j k l  | ← ↓ →
-;; u      | Home
-;; o      | End
-;;==============================================================
-CapsLock & i::SendInput, % persistMods("Up")
-CapsLock & j::SendInput, % persistMods("Left")
-CapsLock & k::SendInput, % persistMods("Down")
-CapsLock & l::SendInput, % persistMods("Right")
-CapsLock & u::SendInput, % persistMods("Home")
-CapsLock & o::SendInput, % persistMods("End")
 
+;;==============================================================
+;; Navigation
+;; Arrow keys, Home, End, Page Up, and Page Down
+;; u i o p     |     H ↑ E PgUp
+;; j k l ;     |     ← ↓ → PgDn
+;;==============================================================
+CapsLock & i::SendInput, % persistGeneralMods("Up")
+CapsLock & j::SendInput, % persistGeneralMods("Left")
+CapsLock & k::SendInput, % persistGeneralMods("Down")
+CapsLock & l::SendInput, % persistGeneralMods("Right")
 
-persistMods(key)
+CapsLock & u::SendInput, % persistGeneralMods("Home")
+CapsLock & o::SendInput, % persistGeneralMods("End")
+
+CapsLock & p::SendInput, % persistGeneralMods("PgUp")
+CapsLock & SC027::SendInput, % persistGeneralMods("PgDn")
+
+;;==============================================================
+;; Media features
+;; \            play/pause
+;; [,]          preveous/next
+;; {,}          volume up/down
+;; |            mute
+;;==============================================================
+#if GetKeyState( "Shift", "P" ) = 0
+CapsLock & [::Send {Media_Prev}
+CapsLock & ]::Send {Media_Next}
+CapsLock & \::Send {Media_Play_Pause}
+#if GetKeyState( "Shift", "P" ) = 1
+CapsLock & [::Send {Volume_Down}
+CapsLock & ]::Send {Volume_Up}
+CapsLock & \::Send {Volume_Mute}
+#if
+
+;;==============================================================
+;; Modifier key utilities
+;;==============================================================
+
+;; Surround a key with left or right modifiers. e.g. {RCrtl Up}{LShift Up}{x}{LShift Down}{RCtrl Down}
+persistPerciseMods(key)
 {
-	D := ModD("LShift")ModD("LControl")ModD("LAlt")ModD("LWin")ModD("RShift")ModD("RControl")ModD("RAlt")ModD("RWin")
-	U := ModU("LShift")ModU("LControl")ModU("LAlt")ModU("LWin")ModU("RShift")ModU("RControl")ModU("RAlt")ModU("RWin")
-	Return % D . "{" . key . "}" . U
+	return modifyKey("LShift"
+      , modifyKey("LControl"
+      , modifyKey("LAlt"
+      , modifyKey("LWin"
+      , modifyKey("RShift"
+      , modifyKey("RControl"
+      , modifyKey("RAlt"
+      , modifyKey("RWin"
+      , "{" . key . "}"))))))))
 }
 
-ModD(keyName)
+;; Surround a key with general modifiers. e.g. {Crtl Up}{Shift Up}{x}{Shift Down}{Ctrl Down}
+persistGeneralMods(key)
 {
-	if GetKeyState(keyName) = 1
-		Return % "{" . keyName . " down}"
+   Return modifyKey("Shift"
+      , modifyKey("Control"
+      , modifyKey("Alt"
+      , modifyKey("Win"
+      , "{" . key . "}"))))
 }
 
-ModU(keyName)
+modifyKey(modifier, keyCombination)
 {
-	if GetKeyState(keyName) = 1
-		Return % "{" . keyName . " up}"
+   if GetKeyState(modifier) = 1
+      Return % "{" . modifier . " down}" . keyCombination . "{" . modifier . " up}"
+   Return keyCombination
 }

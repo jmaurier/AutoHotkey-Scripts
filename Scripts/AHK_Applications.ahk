@@ -1,4 +1,3 @@
-
 ; Git bash
 ^#G::
 	if WinExist("MINGW64")

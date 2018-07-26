@@ -3,32 +3,36 @@
 ;;==============================================================
 ;; Navigation
 ;;==============================================================
-;; CapsLock     Escape
-;; BackSpace    Delete
 ;; ijkl         up left down right
 ;; u            home
 ;; o            end
 ;; p            Page Up
 ;; ;            Page Down
 ;;==============================================================
+;; Alernate Modifiers
+;;==============================================================
+;; Enter        AppsKey
+;; CapsLock     Escape
+;; BackSpace    Delete
+;;==============================================================
 ;; Advanced Clipboard Features
 ;;==============================================================
-   ;; x            cut to storage
-   ;; c            copy to storage
-   ;; v            peek paste from storage
-   ;; z            pop paste from storage
-   ;; d            soft dump storage
-   ;; D            hard dump storage
+;; x            cut to storage
+;; c            copy to storage
+;; v            peek paste from storage
+;; z            pop paste from storage
+;; d            soft dump storage
+;; D            hard dump storage
    ;; Ctrl d       soft dump all storage
    ;; Ctrl D       hard dump all storage
    ;; Ctrl Alt d   hard dump current storage without paste
    ;; Ctrl Alt D   hard dump all storage without paste
-   ;; s            swap clipboard with highlighted
-   ;; space        switch between stack and queue for storage modes
+;; s            swap clipboard with highlighted
+   ;; `            switch between stack and queue for storage modes
    ;; 1-0          select current storage block
    ;; shift 1-0    see top of storage
    ;; ctrl 1-0     see full storage
-   ;; q            see current storage number and mode (stack/queue)
+   ;; a            see current storage number and mode (stack/queue)
 ;;==============================================================
 ;; Media features
 ;;==============================================================
@@ -37,9 +41,11 @@
 ;; [,]          preveous/next
 ;; {,}          volume down/up
 ;;==============================================================
-
-CapsLock::SendInput, {Escape}
-CapsLock & BackSpace::SendInput, {Delete}
+;;==============================================================
+;; Other Features
+;;==============================================================
+;; Tab          Delete
+;;==============================================================
 
 ;;==============================================================
 ;; Navigation
@@ -59,6 +65,99 @@ CapsLock & p::SendInput, % persistGeneralMods("PgUp")
 CapsLock & SC027::SendInput, % persistGeneralMods("PgDn")
 
 ;;==============================================================
+;; Alernate Modifiers
+;;==============================================================
+;; Enter        AppsKey
+;; CapsLock     Escape
+;; BackSpace    Delete
+;;==============================================================
+
+CapsLock & Enter::SendInput, {AppsKey}
+CapsLock::SendInput, {Escape}
+CapsLock & BackSpace::SendInput, {Delete}
+
+;;==============================================================
+;; Advanced Clipboard Features
+;;==============================================================
+;; x            cut to storage
+CapsLock & x::
+Clipboard =
+SendInput, ^x
+ClipWait
+clipindex += 1
+clipvar%clipindex% := clipboard
+Return
+
+;; c            copy to storage
+CapsLock & c::
+Clipboard =
+SendInput, ^c
+ClipWait
+clipindex += 1
+clipvar%clipindex% := clipboard
+Return
+
+;; v            peek paste from storage
+CapsLock & v::
+clipboard := clipvar%clipindex%
+SendInput, ^v
+return
+
+;; z            pop paste from storage
+CapsLock & z::
+clipboard := clipvar%clipindex%
+SendInput, ^v
+if clipindex > 0
+   clipindex -= 1
+return
+
+#if GetKeyState( "Shift", "P" ) = 0
+
+;; d            soft dump storage
+CapsLock & d::
+SetFormat, float, 06.0
+Loop %clipindex%
+{
+  zindex := SubStr("0000000000" . A_Index, -9)
+  clipboard := clipvar%A_Index% . "`r"
+  SendInput, ^v
+  Sleep, 50
+}
+Return
+
+;; D            hard dump storage
+#if GetKeyState( "Shift", "P" ) = 1
+CapsLock & D::
+SetFormat, float, 06.0
+Loop %clipindex%
+{
+  zindex := SubStr("0000000000" . A_Index, -9)
+  clipboard := clipvar%A_Index% . "`r"
+  SendInput, ^v
+  Sleep, 50
+}
+clipindex = 0
+Return
+#if
+
+;; s            swap clipboard with highlighted
+CapsLock & s::
+pastebackup = %clipboard%
+ClipWait, 0.05, 1
+clipboard =
+ClipWait, 0.05, 1
+Send ^c
+ClipWait, 0.05, 1
+clipboardbackup = %clipboard%
+ClipWait, 0.05, 1
+clipboard = %pastebackup%
+ClipWait, 0.05, 1
+Send ^v
+clipboard = %clipboardbackup%
+ClipWait, 0.05, 1
+return
+
+;;==============================================================
 ;; Media features
 ;; \            play/pause
 ;; [,]          preveous/next
@@ -74,6 +173,11 @@ CapsLock & [::Send {Volume_Down}
 CapsLock & ]::Send {Volume_Up}
 CapsLock & \::Send {Volume_Mute}
 #if
+
+;;==============================================================
+;; Other Features
+;;==============================================================
+CapsLock & Tab::SendInput, {Delete}
 
 ;;==============================================================
 ;; Modifier key utilities

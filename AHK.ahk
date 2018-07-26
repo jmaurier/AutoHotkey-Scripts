@@ -17,7 +17,10 @@ ToolTip
 #Include, %A_ScriptDir%\Scripts\AHK_SaltModifier.ahk
 
 ;Never show a tray icon for AutoHotkey.
-#NoTrayIcon
+;#NoTrayIcon
+
+;Set maximum variable size to max (4095)\
+#MaxMem, 4095
 
 ;Suspend all AutoHotkey functionality until Win + Q is hit again.
 #Q::Suspend

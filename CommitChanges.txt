@@ -1,4 +1,5 @@
-+ Made surrounding a key with modifiers easier
-- removed windows key navigation
-- removed media mode
-+ add media keys to salt modifier
++ Enter + Salt = AppsKey
++ Salt + Tab = Delete
+- Remove .NET google searching
++ #MaxMem set to 4095 MegaBytes
++ Salted Advanced Clipboard Features z,x,c,v,d,D,s implemented

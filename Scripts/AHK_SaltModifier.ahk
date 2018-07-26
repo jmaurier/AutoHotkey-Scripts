@@ -111,8 +111,7 @@ if clipindex > 0
    clipindex -= 1
 return
 
-#if GetKeyState( "Shift", "P" ) = 0
-
+#if GetKeyState( "Ctrl", "P" ) = 0 and GetKeyState( "Alt", "P" ) = 0 and GetKeyState( "Shift", "P" ) = 0
 ;; d            soft dump storage
 CapsLock & d::
 SetFormat, float, 06.0
@@ -124,9 +123,8 @@ Loop %clipindex%
   Sleep, 50
 }
 Return
-
 ;; D            hard dump storage
-#if GetKeyState( "Shift", "P" ) = 1
+#if GetKeyState( "Ctrl", "P" ) = 0 and GetKeyState( "Alt", "P" ) = 0 and GetKeyState( "Shift", "P" ) = 1
 CapsLock & D::
 SetFormat, float, 06.0
 Loop %clipindex%
@@ -136,6 +134,11 @@ Loop %clipindex%
   SendInput, ^v
   Sleep, 50
 }
+clipindex = 0
+Return
+#if GetKeyState( "Ctrl", "P" ) = 1 and GetKeyState( "Alt", "P" ) = 1 and GetKeyState( "Shift", "P" ) = 0
+;; Ctrl Alt d   hard dump current storage without paste
+CapsLock & d::
 clipindex = 0
 Return
 #if

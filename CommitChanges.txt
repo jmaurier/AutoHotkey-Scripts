@@ -1,5 +1,1 @@
-+ Enter + Salt = AppsKey
-+ Salt + Tab = Delete
-- Remove .NET google searching
-+ #MaxMem set to 4095 MegaBytes
-+ Salted Advanced Clipboard Features z,x,c,v,d,D,s implemented
++ Salt + Ctrl + Alt + d clear clip storage 
